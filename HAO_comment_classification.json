@@ -485,7 +485,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 18,
             "Comment Body": "Can you add comments to this method or break the logic into more variables in the method. It is very difficult to understand the Scala magic here. You call the method `extractAggregatesAndExpressions` but what do the expression that come out of this method describe? Also you use too generic `aggs` and `agg` variables name with different data types and meaning.",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element, Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element" and "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
       },
       {
             "PR ID": 233601182,
@@ -813,7 +813,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 9,
             "Comment Body": "This does not seems to be used.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
       },
       {
             "PR ID": 35890845,
@@ -821,7 +821,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 17,
             "Comment Body": "Ditto.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
       },
       {
             "PR ID": 36767246,
@@ -829,7 +829,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 1,
             "Comment Body": "As far as I can tell none of these are needed. Can we remove them for now?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
       },
       {
             "PR ID": 36767246,
@@ -837,7 +837,7 @@
             "Comment Author": "suvodeep-pyne",
             "Comment Order": 15,
             "Comment Body": "Nitpick: can remove empty closures\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
       },
       {
             "PR ID": 36767246,
@@ -845,7 +845,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 17,
             "Comment Body": "You can change this to return type `boolean` instead of `Boolean`\n",
-            "Comment Classification": ""
+            "Comment Classification": "Element Type: Comments that indicate that a code element is of the wrong type"
       },
       {
             "PR ID": 36767246,
@@ -853,7 +853,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 12,
             "Comment Body": "I think we can lose the generic types \"I\" and \"O\". `isValid` doesn't need to take in parameters. Any required information for a `ValidationRule` can just be passed in via the constructor.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Function Parameters: Comments that indicate missing or incorrect function parameters, like incorrect use of void parameters."
       },
       {
             "PR ID": 36767246,
@@ -861,7 +861,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 18,
             "Comment Body": "Same as above\n",
-            "Comment Classification": ""
+            "Comment Classification": "Function Parameters: Comments that indicate missing or incorrect function parameters, like incorrect use of void parameters."
       },
       {
             "PR ID": 36767246,
@@ -869,7 +869,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 5,
             "Comment Body": "Can you document in more detail how this interface exactly gets used. I don't fully understand the flow from the `ConfigReader` to the `ConfigStepsGenerator` to a `Step`.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
       },
       {
             "PR ID": 36767246,
@@ -877,7 +877,7 @@
             "Comment Author": "suvodeep-pyne",
             "Comment Order": 14,
             "Comment Body": "Copyright is generally the first thing in the file. \n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
       },
       {
             "PR ID": 36767246,
@@ -885,7 +885,7 @@
             "Comment Author": "suvodeep-pyne",
             "Comment Order": 16,
             "Comment Body": "One suggestion is to actually nail down the config file instead of generifying it. The user can store in whatever format he wants and its his responsibility to feed in the information as a config which can be a simple properties object or even a hadoop config. This config can be used to execute the test harness. If the Config is an unqualified generic then, how do we plan to read the config in the framework ?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Function Parameters, Knowledge Transfer, and possibly Code Complexity"
       },
       {
             "PR ID": 36767246,
@@ -893,7 +893,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 19,
             "Comment Body": "I don't think its necessary to make this a separate method. The `TestHarnessLauncher` can handle this behind the scenes.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 36767246,
@@ -901,7 +901,7 @@
             "Comment Author": "suvodeep-pyne",
             "Comment Order": 13,
             "Comment Body": "So there is a TestHarnessExecutor and a TestHarnessLauncher. Both have a launchTest method. Could you shed some light on the roles of each of these classes?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 37074507,
@@ -909,7 +909,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 1,
             "Comment Body": "The convention is to put gobblin imports at the bottom.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 37074507,
@@ -917,7 +917,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 22,
             "Comment Body": "nit: Shouldn't this be outside the loop?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error, Wrong Location "
       },
       {
             "PR ID": 37074507,
@@ -925,7 +925,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 2,
             "Comment Body": "`jsonObject` is a better name than `obj`.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 37074507,
@@ -933,7 +933,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 7,
             "Comment Body": "Is it possible for `getBytes` to return a `null`? BTW: need one space before `=`.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting, Unvalidated Element"
       },
       {
             "PR ID": 37074507,
@@ -941,7 +941,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 5,
             "Comment Body": "Ditto, gobblin imports should be at the bottom.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 37074507,
@@ -949,7 +949,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 4,
             "Comment Body": "Missing license header.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 37074507,
@@ -957,7 +957,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 3,
             "Comment Body": "No `*` please.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 37074507,
@@ -965,7 +965,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 8,
             "Comment Body": "`private static final` please.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 37074507,
@@ -973,7 +973,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 21,
             "Comment Body": "Please move those `static` imports to the top.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 37074507,
@@ -981,7 +981,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 20,
             "Comment Body": "Please change to `static final` and use `COLUMNS`.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 37074507,
@@ -989,7 +989,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 19,
             "Comment Body": "You can do `for (MockJdbcColumn column : columns) {}`.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 37074507,
@@ -997,7 +997,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 23,
             "Comment Body": "Have you looked at MockResultSet in https://github.com/mockrunner/mockrunner ? It is a bit more generic way to mock result sets and it can deal with multiple records.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 37074507,
@@ -1005,7 +1005,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 6,
             "Comment Body": "Ditto. Missing license header.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 37074507,
@@ -1013,7 +1013,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 9,
             "Comment Body": "All three can be final.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 246539821,
@@ -1021,7 +1021,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 17,
             "Comment Body": "```suggestion\r\nOrganizations creating products and projects using Apache IoTDB, along with associated marketing materials, should take care to respect the trademark in \u201cApache IoTDB\u201d and its logo. Please refer to [ASF Trademarks Guidance](https://www.apache.org/foundation/marks/) and associated [FAQ](https://www.apache.org/foundation/marks/faq/) for comprehensive and authoritative guidance on proper usage of ASF trademarks.  \r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 246539821,
@@ -1029,7 +1029,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 18,
             "Comment Body": "```suggestion\r\nIt is recommended to not include \u201cIoTDB\u201d in any names to prevent potential trademark issue with the IoTDB project.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 246539821,
@@ -1037,7 +1037,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 19,
             "Comment Body": "```suggestion\r\nAs an example, names like \u201cIoTDB BigDataProduct\u201d should not be used, as the name include \u201cIoTDB\u201d in general. The above links, however, describe some exceptions, like for names such as \u201cBigDataProduct, powered by Apache IoTDB\u201d or \u201cBigDataProduct for Apache IoTDB\u201d. In summary, any names contain \"Apache IoTDB\" as a whole are acceptable\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 246539821,
@@ -1045,7 +1045,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 20,
             "Comment Body": "```suggestion\r\nA common practice you can take is to create software identifiers (Maven coordinates, module names, etc.) like \u201ciotdb-tool\u201d. These are permitted. Nominative use of trademarks in descriptions is also allowed, as in \u201cBigDataProduct is a subproduct for Apache IoTDB\u201d.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 246539821,
@@ -1053,7 +1053,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 21,
             "Comment Body": "```suggestion\r\nTo add yourself to the list, please email dev@iotdb.apache.org with your organization name, URL, a list of IoTDB components you are using, and a short description of your use case.  \r\n```\r\nAs an Apache project, I would recommend lowering the bar of joining the dev@. It is a great opportunity to grow the community. They could simply subscribe to the list without any additional requirement.",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 246539821,
@@ -1061,7 +1061,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 7,
             "Comment Body": "```suggestion\r\nIt is recommmended to use our mailing lists to ask for help, debug issues or contribute to the project.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 246539821,
@@ -1069,7 +1069,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 22,
             "Comment Body": "```suggestion\r\nIt is recommended to use our mailing lists to ask for help, file issues or contribute to the project.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 246539821,
@@ -1077,7 +1077,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 23,
             "Comment Body": "```suggestion\r\n* dev@iotdb.apache.org is for anyone who want to contribute codes to IoTDB or have usage questions for it.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 246539821,
@@ -1085,7 +1085,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 24,
             "Comment Body": "```suggestion\r\n* For error logs or long code examples, please use GitHub gist and include only few lines of the pertinent code / log within the email.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 246539821,
@@ -1093,7 +1093,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 8,
             "Comment Body": "```suggestion\r\nSince IoTDB always attracts new users, it would be great if you can help them by answering questions on the dev@iotdb.apache.org mail list. We regard it as a valuable contribution. Also, the more questions you answer, the more poeple know you. Popularity is one of the necessary conditions to be a committer.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 246539821,
@@ -1101,7 +1101,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 9,
             "Comment Body": "```suggestion\r\nContributors should subscribe to our mail list to catch up the latest progress.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 246539821,
@@ -1109,7 +1109,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 25,
             "Comment Body": "```suggestion\r\nPS. To subscribe our mail list, you can send an email to dev-subscribe@iotdb.incubator.apache.org and you will receive a \"confirm subscribe to dev@iotdb.apache.org\" email. Following the steps to confirm your subscription.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 246539821,
@@ -1117,7 +1117,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 10,
             "Comment Body": "```suggestion\r\nIoTDB's new release is visable to everyone, members of community can vote to accept these releases on the dev@iotdb.apache.org mailing list. Users of IoTDB will be invited to try out on their workloads and provide feedback on any performance or correctness issues found in the newer release.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 246539821,
@@ -1125,7 +1125,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 11,
             "Comment Body": "```suggestion\r\nChanges to IoTDB source codes are made through Github pull request. Anyone can review and comment on these changes. Reviewing others' pull requests can help you comprehend how a bug is fixed or a new feature is added. Besides, Learning directly from source code will give you a deeper understanding of how IoTDB system works and where its bottlenecks lie. You can help by reviewing the changes, asking questions and pointing out issues.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 246539821,
@@ -1133,7 +1133,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 26,
             "Comment Body": "```suggestion\r\nTo become a committer, you should first be active in our community so that most of our existing committers recognize you. Pushing codes and creating pull requests is just one of committer's rights. Moreover, it is committer's duty to help new users on the mailing list, test new releases and improve documentation.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 246539821,
@@ -1141,7 +1141,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 12,
             "Comment Body": "I would recommend to file the problem as an issue. Committers will be able to add labels to identify it as a bug not.",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 246539821,
@@ -1149,7 +1149,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 27,
             "Comment Body": "```suggestion\r\nSince Apache IoTDB always attracts new users, it would be great if you can help them by answering questions on the dev@iotdb.apache.org mailing list. We regard it as a valuable contribution. Also, the more questions you answer, the more people know you. Popularity is one of the necessary conditions to be a committer.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 246539821,
@@ -1157,7 +1157,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 28,
             "Comment Body": "```suggestion\r\nContributors should subscribe to our mailing list to catch up the latest progress.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 246539821,
@@ -1165,7 +1165,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 29,
             "Comment Body": "```suggestion\r\nIoTDB's new release is visible to everyone, members of the community can vote to accept these releases on the dev@iotdb.apache.org mailing list. Users of IoTDB will be invited to try out on their workloads and provide feedback on any performance regression or bugs found in the newer release.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 246539821,
@@ -1173,7 +1173,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 13,
             "Comment Body": "```suggestion\r\nGenerally, IoTDB uses JIRA to track logical issues, including bugs and improvements, and uses Github pull requests to manage the review and merge specific code changes. That is, JIRAs are used to describe what should be fixed or changed, proposing high-level approaches, and pull requests describe how to implement that change in the project\u2019s source code. For example, major design decisions discussed in JIRA.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 246539821,
@@ -1181,7 +1181,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 30,
             "Comment Body": "```suggestion\r\nIf you encounter a problem, you should first confirm the problem you found caused by a bug in the code, which is not error outputs or caused by your error configuration or commands. Then try to search the mailing list to check whether other people have faced the same situation. If it is not reported before, please report an issue.\r\n```\r\nI would recommend users to report bugs/issues on dev@ or on GitHub without much requirement. Committers should help and collaborate to identify the problem. The best way we can take is to ask for a minimal reproducible code that can help us identifying the problem quickly.",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 246539821,
@@ -1189,7 +1189,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 31,
             "Comment Body": "```suggestion\r\nOnce you are sure it is a bug, it may be reported by creating a JIRA without creating a pull request. In the bug report, you should provide enough information to understand, isolate and ideally reproduce the bug. Unreproducible bugs, or simple error reports, may be closed.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 246539821,
@@ -1197,7 +1197,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 32,
             "Comment Body": "```suggestion\r\nNote that, data correctness/loss bugs are our first priority to solve. Please make sure the corresponding bug-reporting JIRA ticket is labeled as correctness or data-loss. If the bug report doesn\u2019t gain enough attention, please include it and send an email to dev@iotdb.apache.org.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 246539821,
@@ -1205,7 +1205,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 33,
             "Comment Body": "```suggestion\r\n> When you contribute code, you affirm that the contribution is your original work and that you license the work to the project under the project\u2019s open source license. Whether or not you state this explicitly, by submitting any copyrighted material via pull request, email, or other means you agree to license the material under the project\u2019s open source license and warrant that you have the legal authority to do so. Any new files contributed should be under Apache 2.0 License with a header on top of it.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 246539821,
@@ -1213,7 +1213,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 14,
             "Comment Body": "```suggestion\r\n1. Fork the Github repository at https://github.com/apache/incubator-iotdb if you haven\u2019t done already\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 246539821,
@@ -1221,7 +1221,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 34,
             "Comment Body": "```suggestion\r\nGenerally, IoTDB uses JIRA to track logical issues, including bugs and improvements, and uses Github pull requests to manage the review and merge specific code changes. That is, JIRAs are used to describe what should be fixed or changed, proposing high-level approaches. Pull requests describe how to implement that change in the project\u2019s source code. For example, major design decisions discussed in JIRA.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 246539821,
@@ -1229,7 +1229,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 35,
             "Comment Body": "```suggestion\r\n    1. Do not create a new JIRA if you send a PR to address an existing issue labeled in JIRA; add it to the existing discussion.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 246539821,
@@ -1237,7 +1237,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 36,
             "Comment Body": "```suggestion\r\n2. If the change is new, then it usually needs a new JIRA. However, trivial changes, such as changes are self-explained do not require a JIRA. Example: Fix spelling error in JavaDoc\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 246539821,
@@ -1245,7 +1245,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 37,
             "Comment Body": "```suggestion\r\n        3. Affected Version. For Bugs, assign at least one version that is known to reproduce the issue or need to be changed\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 246539821,
@@ -1253,7 +1253,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 38,
             "Comment Body": "```suggestion\r\n        5. Docs Text: For issues that require an entry in the release notes, this should contain the information that the release manager should include. Issues should include a short summary of what behavior is impacted, and detail on what behavior changed. It can be provisionally filled out when the JIRA is opened, but will likely need to be updated with final details when the issue is resolved.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 246539821,
@@ -1261,7 +1261,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 39,
             "Comment Body": "```suggestion\r\n4. If the change is a large change, consider raising a discussion on it at dev@iotdb.apache.org first before proceeding to implement the change.\r\n```\r\nCurrently, we use https://cwiki.apache.org/confluence to store design proposals and release process. Users can also send them there.",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 246539821,
@@ -1269,7 +1269,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 40,
             "Comment Body": "```suggestion\r\n3. Please add documentation and tests to explain/cover your changes.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation, Test Coverage"
       },
       {
             "PR ID": 246539821,
@@ -1277,7 +1277,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 41,
             "Comment Body": "```suggestion\r\nRun all tests with [How to test](https://github.com/thulab/iotdb/wiki/How-to-test-IoTDB) to verify your change\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Other Test related"
       },
       {
             "PR ID": 246539821,
@@ -1285,7 +1285,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 42,
             "Comment Body": "```suggestion\r\n    1. The PR title should be in the form of \"IoTDB-xxxx\", where xxxx is the relevant JIRA number.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 246539821,
@@ -1293,7 +1293,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 43,
             "Comment Body": "```suggestion\r\n    2. If the pull request is still under work in progress stage but needs to be pushed to Github to request for review, please add \"WIP\" after the component.\r\n```\r\ncomponent? Do you mean the title?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 246539821,
@@ -1301,7 +1301,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 44,
             "Comment Body": "Cane be simplified as `git pull --rebase upstream master`",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 246539821,
@@ -1309,7 +1309,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 45,
             "Comment Body": "```suggestion\r\n    * Note that in the rare case you are asked to open a pull request against a branch beside master, you actually have to close the pull request manually\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 246539821,
@@ -1317,7 +1317,7 @@
             "Comment Author": "wujysh",
             "Comment Order": 6,
             "Comment Body": "Code style? Add a space after `if`.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 246539821,
@@ -1325,7 +1325,7 @@
             "Comment Author": "wujysh",
             "Comment Order": 2,
             "Comment Body": "In general, we should provide link of HTTPS instead of SSH, because someone may not configure SSH certificate.",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 246539821,
@@ -1333,7 +1333,7 @@
             "Comment Author": "wujysh",
             "Comment Order": 3,
             "Comment Body": "Better to uppercase IoTDB and Grafana.",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 246539821,
@@ -1341,7 +1341,7 @@
             "Comment Author": "wujysh",
             "Comment Order": 4,
             "Comment Body": "How to start Grafana on Windows?\r\nBesides, will Grafana becomes a system service automatically after installation? Should we start Grafana in sudo mode?",
-            "Comment Classification": ""
+            "Comment Classification": "Security Concerns"
       },
       {
             "PR ID": 246539821,
@@ -1349,7 +1349,7 @@
             "Comment Author": "wujysh",
             "Comment Order": 5,
             "Comment Body": "This link needs to be updated.",
-            "Comment Classification": ""
+            "Comment Classification": "Compatibility Issues"
       },
       {
             "PR ID": 555516586,
@@ -1357,7 +1357,7 @@
             "Comment Author": "jixuan1989",
             "Comment Order": 3,
             "Comment Body": "Is `Layer Name` a new concept?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 555516586,
@@ -1365,7 +1365,7 @@
             "Comment Author": "haimeiguo",
             "Comment Order": 1,
             "Comment Body": "hi, \r\nroot.sg3.+ not supported.\r\nbut root.sg3.++ is okay.. ",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 185369888,
@@ -1373,7 +1373,7 @@
             "Comment Author": "sdedic",
             "Comment Order": 6,
             "Comment Body": "better add guard to `initializerTree != null` to avoid NPEs in case of some interim text modification",
-            "Comment Classification": ""
+            "Comment Classification": "Unvalidated Element"
       },
       {
             "PR ID": 185369888,
@@ -1381,7 +1381,7 @@
             "Comment Author": "jlahoda",
             "Comment Order": 2,
             "Comment Body": "For consideration: maybe a switch instead of an if cascade?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 185369888,
@@ -1389,7 +1389,7 @@
             "Comment Author": "jlahoda",
             "Comment Order": 1,
             "Comment Body": "Please no access to javac internal types (com.sun.tools.**) in hint implementations. Maybe initTypeMirror = org.netbeans.modules.java.hints.errors.Utilities.resolveCapturedType(initTypeMirror) + just he isSameType check would work? (Possibly check that initTypeMirror is not an erroneous type before, not sure.)",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
       },
       {
             "PR ID": 185369888,
@@ -1397,7 +1397,7 @@
             "Comment Author": "sdedic",
             "Comment Order": 5,
             "Comment Body": "can be this part of condition part of the `anyMatch` clause ?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
       },
       {
             "PR ID": 185369888,
@@ -1405,7 +1405,7 @@
             "Comment Author": "sdedic",
             "Comment Order": 7,
             "Comment Body": "Maybe return false if `initTreePath == false` (or the above if can be inverted to return early on `null`)",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 127527436,
@@ -1413,7 +1413,7 @@
             "Comment Author": "merlimat",
             "Comment Order": 3,
             "Comment Body": "I would prefer to keep a single flag here (enabled/disabled)",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 127527436,
@@ -1421,7 +1421,7 @@
             "Comment Author": "merlimat",
             "Comment Order": 12,
             "Comment Body": "Last comment on this :) \r\n\r\nWhat about renaming it to something like `authorizationAllowWildcardsMatching` ?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 127527436,
@@ -1429,7 +1429,7 @@
             "Comment Author": "merlimat",
             "Comment Order": 4,
             "Comment Body": "return `boolean` instead of `Boolean`",
-            "Comment Classification": ""
+            "Comment Classification": "Element Type"
       },
       {
             "PR ID": 127527436,
@@ -1437,7 +1437,7 @@
             "Comment Author": "rdhabalia",
             "Comment Order": 5,
             "Comment Body": "as we just check Prefix and  suffix so, it seems it will not support wild-card character for usecase:\r\ncheckedRole = `abcd` \r\nand permittedRole = `ab*d`\r\nSo, instead can we use regex-pattern to validate it.",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 127527436,
@@ -1445,7 +1445,7 @@
             "Comment Author": "saandrews",
             "Comment Order": 1,
             "Comment Body": "Don't we have to cover the case with *.my for namespace as well?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 127527436,
@@ -1453,7 +1453,7 @@
             "Comment Author": "saandrews",
             "Comment Order": 2,
             "Comment Body": "We need to add a case to cover prefix match as well?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 277324326,
@@ -1461,7 +1461,7 @@
             "Comment Author": "sijie",
             "Comment Order": 1,
             "Comment Body": "nit: remove these two lines. I don't think they are \"client libraries\".",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 277324326,
@@ -1469,7 +1469,7 @@
             "Comment Author": "Jennifer88huang-zz",
             "Comment Order": 6,
             "Comment Body": "delete \">\" for the commands.",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 277324326,
@@ -1477,7 +1477,7 @@
             "Comment Author": "Jennifer88huang-zz",
             "Comment Order": 7,
             "Comment Body": "use lowercase \"r\".",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 277324326,
@@ -1485,7 +1485,7 @@
             "Comment Author": "Jennifer88huang-zz",
             "Comment Order": 5,
             "Comment Body": "```suggestion\r\n#### What your package contains\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 277324326,
@@ -1493,7 +1493,7 @@
             "Comment Author": "Jennifer88huang-zz",
             "Comment Order": 9,
             "Comment Body": "maybe you can just remove this heading, and use heading 4 for the two optional components.",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 277324326,
@@ -1501,7 +1501,7 @@
             "Comment Author": "Jennifer88huang-zz",
             "Comment Order": 8,
             "Comment Body": "builtin",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 277324326,
@@ -1509,7 +1509,7 @@
             "Comment Author": "Jennifer88huang-zz",
             "Comment Order": 4,
             "Comment Body": "```suggestion\r\n### Start Pulsar standalone\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 277324326,
@@ -1517,7 +1517,7 @@
             "Comment Author": "Jennifer88huang-zz",
             "Comment Order": 3,
             "Comment Body": "```suggestion\r\nPulsar provides a CLI tool called [`pulsar-client`](reference-cli-tools.md#pulsar-client). The pulsar-client tool enables you to consume and produce messages to a Pulsar topic in a running cluster. \r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 277324326,
@@ -1525,7 +1525,7 @@
             "Comment Author": "Jennifer88huang-zz",
             "Comment Order": 11,
             "Comment Body": "We can adopt either of the following two options:\r\n1. Press Ctrl+C to ... (from IBM style guides)\r\n2. Press CTRL+C to ... (Microsoft style)\r\n- When you write about two or more keys that are used in combination to perform a function, use the plus sign (+) to separate the key names. Do not insert a space before or after the plus sign.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 375181038,
@@ -1533,7 +1533,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 6,
             "Comment Body": "It's better to named isKeyBase64Encoded().",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 375181038,
@@ -1541,7 +1541,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 1,
             "Comment Body": "```suggestion\r\n            int keyLength = dataPayload.readInt();\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 375181038,
@@ -1549,7 +1549,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 2,
             "Comment Body": "```suggestion\r\n            int valueLength = dataPayload.readInt();\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 375181038,
@@ -1557,7 +1557,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 3,
             "Comment Body": "It's better to use a since enum to indicate the column is key column or value column for KeyValueSchema.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 375181038,
@@ -1565,7 +1565,7 @@
             "Comment Author": "sijie",
             "Comment Order": 10,
             "Comment Body": "I don't think we need to add `value.` for value. We should keep the behavior consistent between messages with keys and without keys.",
-            "Comment Classification": ""
+            "Comment Classification": "Duplication"
       },
       {
             "PR ID": 375181038,
@@ -1573,7 +1573,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 4,
             "Comment Body": "Maybe this can be handled in PulsarColumnMetadata.class. If the PulsarColumnMetadata known the column is key or value, straightforward rename it.",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 375181038,
@@ -1581,7 +1581,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 5,
             "Comment Body": "We can get the `keyBytes` by  `message.getKeyBytes()`, so that you don't need to decode a String by base64 decoder.",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 375181038,
@@ -1589,7 +1589,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 7,
             "Comment Body": "If exception cause when reading schema properties, we'd better throw a runtime exception.\r\n",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 566526362,
@@ -1597,7 +1597,7 @@
             "Comment Author": "315157973",
             "Comment Order": 3,
             "Comment Body": "Should we distinguish between a single Message and BatchMessage?\r\n`batchIndex` and `batchSize` should be attributes of BatchMessage.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 566526362,
@@ -1605,7 +1605,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 2,
             "Comment Body": "If we move all the fields of BatchMessageIdImpl to MessageIdImpl, the BatchMessageIdImpl is useless?",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 566526362,
@@ -1613,7 +1613,7 @@
             "Comment Author": "merlimat",
             "Comment Order": 1,
             "Comment Body": "This call will involve several allocations on the heap, because `Objects.hash()` takes a `Object[]` and all the longs also need to get boxes into `Long` instances.",
-            "Comment Classification": ""
+            "Comment Classification": "Algorithmic Efficiency/Performance"
       },
       {
             "PR ID": 566526362,
@@ -1621,7 +1621,7 @@
             "Comment Author": "eolivelli",
             "Comment Order": 6,
             "Comment Body": "interesting catch",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 658318825,
@@ -1629,7 +1629,7 @@
             "Comment Author": "Anonymitaet",
             "Comment Order": 7,
             "Comment Body": "```suggestion\r\n# The maximum number of connections in the broker. If it exceeds, new connections are rejected.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 658318825,
@@ -1637,7 +1637,7 @@
             "Comment Author": "Anonymitaet",
             "Comment Order": 8,
             "Comment Body": "```suggestion\r\n# The maximum number of connections per IP. If it exceeds, new connections are rejected.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 658318825,
@@ -1645,7 +1645,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 1,
             "Comment Body": "Could you fix the doc?",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 658318825,
@@ -1653,7 +1653,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 2,
             "Comment Body": "Same as above.",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 658318825,
@@ -1661,7 +1661,7 @@
             "Comment Author": "cckellogg",
             "Comment Order": 19,
             "Comment Body": "Why only IPV4?",
-            "Comment Classification": ""
+            "Comment Classification": "Compatibility Issues"
       },
       {
             "PR ID": 658318825,
@@ -1669,7 +1669,7 @@
             "Comment Author": "cckellogg",
             "Comment Order": 20,
             "Comment Body": "I think this complicates the logic and the connection counting should only be incremented after checking if it's less than max connections. Total connections should never go above max connections right?  \r\n\r\nAlso, it might be easer in the construction to add a flags indicating what is enabled.  For example,\r\n`maxConnectionsLimitEnabled` and `maxConnectionsLimitByIpEnabled`\r\n\r\nThe below is much clearer to me\r\n```\r\nif (maxConnectionsLimitEnabled) {\r\n  if (totalConnectionNum < maxConnections) {\r\n    totalConnectionNum++\r\n  } else {\r\n    log.info(\"Reject connect request from {}, because reached the maximum number of connections {}\",                            \r\n      remoteAddress, maxConnections)\r\n  }\r\n}\r\n```\r\nOr add comments above the if statements to indicate what's being checked.\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 658318825,
@@ -1677,7 +1677,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 23,
             "Comment Body": "If using `CONNECTIONS.computeIfAbsent` the connection count per IP will doesn't increase after it is initialized.",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 658318825,
@@ -1685,7 +1685,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 24,
             "Comment Body": "Users couldn't distinguish the specific error from this message, reach the maximum of a broker or reach the maximum of per IP.",
-            "Comment Classification": ""
+            "Comment Classification": "Logging"
       },
       {
             "PR ID": 658318825,
@@ -1693,7 +1693,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 5,
             "Comment Body": "maybe `fireChannelUnregistered`?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 658318825,
@@ -1701,7 +1701,7 @@
             "Comment Author": "cckellogg",
             "Comment Order": 12,
             "Comment Body": "We should check corner cases \r\nbrokerMaxConnections=1\r\nbrokerMaxConnectionsPerIp=0\r\n\r\nbrokerMaxConnections=0\r\nbrokerMaxConnectionsPerIp=1\r\n\r\nbrokerMaxConnections=0\r\nbrokerMaxConnectionsPerIp=0\r\n\r\nbrokerMaxConnections=1\r\nbrokerMaxConnectionsPerIp=1\r\n\r\n",
-            "Comment Classification": ""
+            "Comment Classification": "Test Cases"
       },
       {
             "PR ID": 661985260,
@@ -1709,7 +1709,7 @@
             "Comment Author": "Anonymitaet",
             "Comment Order": 1,
             "Comment Body": "```suggestion\r\nhttps://pulsar.apache.org/docs/en/next/security-overview/.\r\n```\r\nSuggest using the latest info",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 661985260,
@@ -1717,7 +1717,7 @@
             "Comment Author": "Anonymitaet",
             "Comment Order": 8,
             "Comment Body": "FYI @momo-jun @D-2-Ed @DaveDuggins\r\nThis is related to doc maintenance (doc life cycle)",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 661985260,
@@ -1725,7 +1725,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 6,
             "Comment Body": "4 major releases?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 677542787,
@@ -1733,7 +1733,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 5,
             "Comment Body": "Looks the tests are not applied socks5 proxy? I noticed no one call this method.",
-            "Comment Classification": ""
+            "Comment Classification": "Test Coverage"
       },
       {
             "PR ID": 677542787,
@@ -1741,7 +1741,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 10,
             "Comment Body": "Use log?",
-            "Comment Classification": ""
+            "Comment Classification": "Logging"
       },
       {
             "PR ID": 677542787,
@@ -1749,7 +1749,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 4,
             "Comment Body": "Why we will get timeout exception here, because of the pulsar client auto reconnect?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 677542787,
@@ -1757,7 +1757,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 8,
             "Comment Body": "It seems that this check is duplicated.",
-            "Comment Classification": ""
+            "Comment Classification": "Duplication"
       },
       {
             "PR ID": 677542787,
@@ -1765,7 +1765,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 11,
             "Comment Body": "Does the TLS could work well with socks5?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 677542787,
@@ -1773,7 +1773,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 14,
             "Comment Body": "Could using the `String` type? We could generate `InetSocketAddress` in class `PulsarChannelInitializer.java ` when initializing the socks5 handler.",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 677542787,
@@ -1781,7 +1781,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 12,
             "Comment Body": "Does it need to config client by the system property?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 677542787,
@@ -1789,7 +1789,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 13,
             "Comment Body": "Why ignore this exception?",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 677542787,
@@ -1797,7 +1797,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 17,
             "Comment Body": "Does it need to config client by the system property?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 677542787,
@@ -1805,7 +1805,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 18,
             "Comment Body": "Same as above.",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 677542787,
@@ -1813,7 +1813,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 15,
             "Comment Body": "The type is `String`?",
-            "Comment Classification": ""
+            "Comment Classification": "Element Type"
       },
       {
             "PR ID": 677542787,
@@ -1821,7 +1821,7 @@
             "Comment Author": "Anonymitaet",
             "Comment Order": 1,
             "Comment Body": "Do we need to add descriptions as below?\r\n\r\nIf you want to use the SOCKS5 proxy, you can add a SOCKS5 proxy handler in\u00a0the connection pool\u00a0as the first handler for both producer and consumer.\r\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 677542787,
@@ -1829,7 +1829,7 @@
             "Comment Author": "Anonymitaet",
             "Comment Order": 2,
             "Comment Body": "```suggestion\r\nSocketAddress|`socks5ProxyAddress`|SOCKS5 proxy address | None\r\n```\r\n\r\nPlease pay attention to the capitalization of the proper noun: https://en.wikipedia.org/wiki/SOCKS\r\n\r\nPlease correct all occurrences, thanks. ",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 677542787,
@@ -1837,7 +1837,7 @@
             "Comment Author": "gaoran10",
             "Comment Order": 16,
             "Comment Body": "The type is `String`?",
-            "Comment Classification": ""
+            "Comment Classification": "Element Type"
       },
       {
             "PR ID": 808955831,
@@ -1845,7 +1845,7 @@
             "Comment Author": "codelipenghui",
             "Comment Order": 1,
             "Comment Body": "We should highlight the log4j CVE fix.",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 808955831,
@@ -1853,7 +1853,7 @@
             "Comment Author": "lhotari",
             "Comment Order": 3,
             "Comment Body": "This is not necessary with Pulsar 2.7.4, please remove.",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 152961808,
@@ -1861,7 +1861,7 @@
             "Comment Author": "liubao68",
             "Comment Order": 1,
             "Comment Body": "indention",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 152961808,
@@ -1869,7 +1869,7 @@
             "Comment Author": "WillemJiang",
             "Comment Order": 2,
             "Comment Body": "How can we tell the path by removing the first 4 characters?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 152961808,
@@ -1877,7 +1877,7 @@
             "Comment Author": "WillemJiang",
             "Comment Order": 3,
             "Comment Body": "We should use assert instead of printResults to check the result data.",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 152961808,
@@ -1885,7 +1885,7 @@
             "Comment Author": "WillemJiang",
             "Comment Order": 5,
             "Comment Body": "we may need to do some log here.",
-            "Comment Classification": ""
+            "Comment Classification": "Logging"
       },
       {
             "PR ID": 152961808,
@@ -1893,7 +1893,7 @@
             "Comment Author": "WillemJiang",
             "Comment Order": 6,
             "Comment Body": "log the edge service works in reactive mode.",
-            "Comment Classification": ""
+            "Comment Classification": "Logging"
       },
       {
             "PR ID": 780773455,
@@ -1901,7 +1901,7 @@
             "Comment Author": "tuichenchuxin",
             "Comment Order": 8,
             "Comment Body": "remove useless empty line.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 780773455,
@@ -1909,7 +1909,7 @@
             "Comment Author": "dongzl",
             "Comment Order": 2,
             "Comment Body": "remove blank line.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 780773455,
@@ -1917,7 +1917,7 @@
             "Comment Author": "strongduanmu",
             "Comment Order": 9,
             "Comment Body": "@clbigdata Please add final for ShowTriggersStatementAssert.",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 780773455,
@@ -1925,7 +1925,7 @@
             "Comment Author": "dongzl",
             "Comment Order": 3,
             "Comment Body": "remove blank line.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 780773455,
@@ -1933,7 +1933,7 @@
             "Comment Author": "strongduanmu",
             "Comment Order": 10,
             "Comment Body": "@clbigdata Please keep indents consistent with the previous one.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 780773455,
@@ -1941,7 +1941,7 @@
             "Comment Author": "tuichenchuxin",
             "Comment Order": 7,
             "Comment Body": "Please keep the code style same.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 780773455,
@@ -1949,7 +1949,7 @@
             "Comment Author": "tuichenchuxin",
             "Comment Order": 1,
             "Comment Body": "May be show triggers better",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 780773455,
@@ -1957,7 +1957,7 @@
             "Comment Author": "dongzl",
             "Comment Order": 6,
             "Comment Body": "the same.",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 780773455,
@@ -1965,7 +1965,7 @@
             "Comment Author": "dongzl",
             "Comment Order": 4,
             "Comment Body": "remove blank line.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 780773455,
@@ -1973,7 +1973,7 @@
             "Comment Author": "dongzl",
             "Comment Order": 5,
             "Comment Body": "the same to above.",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 440613341,
@@ -1981,7 +1981,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 9,
             "Comment Body": "I am seeing possible race condition here.\r\nBecause  `executor.credentialsChanged` happens before `this.workerState.credentialsAtom.set(newCreds)` is invoked, executor could trigger credential update before the newCreds is not updated yet.",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 440613341,
@@ -1989,7 +1989,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 7,
             "Comment Body": "This can be private",
-            "Comment Classification": ""
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 440613341,
@@ -1997,7 +1997,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 6,
             "Comment Body": "This can be private",
-            "Comment Classification": ""
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 440613341,
@@ -2005,7 +2005,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 18,
             "Comment Body": "This needs to be `volatile ` to make sure the changes from other threads can be seen immediately ",
-            "Comment Classification": ""
+            "Comment Classification": "Element Type"
       },
       {
             "PR ID": 440613341,
@@ -2013,7 +2013,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 8,
             "Comment Body": "This can be debug. ",
-            "Comment Classification": ""
+            "Comment Classification": "Logging"
       },
       {
             "PR ID": 440613341,
@@ -2021,7 +2021,7 @@
             "Comment Author": "agresch",
             "Comment Order": 1,
             "Comment Body": "I think maybe we should first set  this.needToRefreshCreds to false and then update the creds.  Imagine we uploaded credentials twice in a row and this loaded the first creds and the thread paused.  It would then clear the update flag and miss the second credentials upload.",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 440613341,
@@ -2029,7 +2029,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 10,
             "Comment Body": "There seems to be a race condition here.\r\n\r\nThe executor thread consumes from receiveQ and every time it consumes one tuple, the `accept` method is invoked and `needToRefreshCreds` is checked.\r\n\r\nThis `needToRefreshCreds` variable is accessed by others threads (which invoke `credentialsChanged`) and the value will be updated to `true`.\r\n\r\nSo first of all, `needToRefreshCreds` needs to be at least `violate`. But `violate` doesn't seem enough because `needToRefreshCreds` is set to `false` in this executor thread, and set to `true` in other threads.\r\n\r\nBetween checking if `needToRefreshCreds` is true and setting it to be `false` in the executor thread, `needToRefreshCreds` could be modified to `true` in other threads but this information is lost.\r\n",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 440613341,
@@ -2037,7 +2037,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 11,
             "Comment Body": "An issue about checking the value here is it might be blocked.\r\nThis `accept` is only called when `receiveQueue.consume` is called. But it could be blocked so credential update will be delayed. ",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 440613341,
@@ -2045,7 +2045,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 22,
             "Comment Body": "The initial value should be `false` to avoid unnecessary update at the beginning.",
-            "Comment Classification": ""
+            "Comment Classification": "Variable Initialisation"
       },
       {
             "PR ID": 440613341,
@@ -2053,7 +2053,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 17,
             "Comment Body": "Maybe we should change it to be `DEBUG` since this is on a critical path (even though this `method` might not be called very frequently)",
-            "Comment Classification": ""
+            "Comment Classification": "Logging"
       },
       {
             "PR ID": 440613341,
@@ -2061,7 +2061,7 @@
             "Comment Author": "bipinprasad",
             "Comment Order": 2,
             "Comment Body": "Minor: Does this method name and signature needs to change since it is setting a flag and not using the supplied parameter?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 761731859,
@@ -2069,7 +2069,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 3,
             "Comment Body": "This has nothing to do with IMetric anymore. Feel like we should simplify it since we are here",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 761731859,
@@ -2077,7 +2077,7 @@
             "Comment Author": "bipinprasad",
             "Comment Order": 1,
             "Comment Body": "Should this be ever called?",
-            "Comment Classification": ""
+            "Comment Classification": "Function Calls"
       },
       {
             "PR ID": 761731859,
@@ -2572,7 +2572,7 @@
             "Comment ID": 434196362,
             "Comment Author": "dulajdilshan",
             "Comment Order": 13,
-            "Comment Body": "Copyright year\\r\\n```suggestion\\r\\n *   Copyright (c) 2020, WSO2 Inc. (https://www.wso2.org) All Rights Reserved.\\r\\n```",
+            "Comment Body": "Copyright year\r\n```suggestion\r\n *   Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.\r\n```",
             "Comment Classification": ""
       },
       {
@@ -3188,7 +3188,7 @@
             "Comment ID": 151839081,
             "Comment Author": "romani",
             "Comment Order": 4,
-            "Comment Body": ">  only the last one will be used\\r\\n\\r\\nwe need to change wording here, as in example below last comment with javadoc identifier is `/** Not a javadoc (ignored). */`\\r\\nWe need to define order/direction for \\\"last\\\" - from bottom to top.\\r\\n\\r\\https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html\\r\\n\\r\\n> A doc comment is written in HTML and must precede a class, field, constructor or method declaration.\\r\\n\\r\\nwe might need to add to this ... \\\" (above annotations) \\\", so it will be:\\r\\n\\\"...character and placed above above annotations of class (if preset) definition, ....method definition or field.\\\"\\r\\n\\r\\n>or annotation field definition.\\r\\n\\r\\nis a weird term from checkstyle ast, jdk does have such term - https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.7 , so lets avoid it in public\\r\\n\\r\\n",
+            "Comment Body": ">  only the last one will be used\r\n\r\nwe need to change wording here, as in example below last comment with javadoc identifier is `/** Not a javadoc (ignored). */`\r\nWe need to define order/direction for \"last\" - from bottom to top.\r\n\r\nhttp://www.oracle.com/technetwork/java/javase/documentation/index-137868.html\r\n\r\n> A doc comment is written in HTML and must precede a class, field, constructor or method declaration.\r\n\r\nwe might need to add to this ... \" (above annotations) \", so it will be:\r\n\"...character and placed above above annotations of class (if preset) definition, ....method definition or field.\"\r\n\r\n>or annotation field definition.\r\n\r\nis a weird term from checkstyle ast, jdk does have such term - https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.7 , so lets avoid it in public\r\n\r\n",
             "Comment Classification": ""
       },
       {
@@ -4172,7 +4172,7 @@
             "Comment ID": 174091932,
             "Comment Author": "joschi",
             "Comment Order": 3,
-            "Comment Body": "The [`@Ignore`](https://junit.sourceforge.net/javadoc/org/junit/Ignore.html) annotation has an argument which can be used to display the reason while running the test.\\r\\nThis might be more useful than a code comment.",
+            "Comment Body": "The [`@Ignore`](http://junit.sourceforge.net/javadoc/org/junit/Ignore.html) annotation has an argument which can be used to display the reason while running the test.\r\nThis might be more useful than a code comment.",
             "Comment Classification": ""
       },
       {
@@ -5076,7 +5076,7 @@
             "Comment ID": 100720999,
             "Comment Author": "mbrukman",
             "Comment Order": 16,
-            "Comment Body": "Please use Asciidoc best practices for section titles, as described in [their docs](https://asciidoctor.org/docs/asciidoc-recommended-practices/#section-titles).\\r\\n\\r\\nSpecifically, this line should be:\\r\\n\\r\\n> = JanusGraph Development Process\\r\\n\\r\\nand other section headings should use the number of leading `=` equal to their header level. \\r\\n\\r\\nThe current approach of using different types of characters on a line is complex (need to remember which character means which heading level) and error-prone (must equal in length to the heading, or else it breaks. This is the type of thing I had to deal with during the global `s/Titan/Janusgraph/` cleanup; see [this commit](https://github.com/JanusGraph/janusgraph/commit/e21734fd1ffef90ef44a0ad7d2da0b2f5859baa4) for more details.\\r\\n\\r\\nI am working on a change to convert all existing headers to the Asciidoc-recommended approach, so it would be nice to not add any more of these anachronistic section titles.",
+            "Comment Body": "Please use Asciidoc best practices for section titles, as described in [their docs](http://asciidoctor.org/docs/asciidoc-recommended-practices/#section-titles).\r\n\r\nSpecifically, this line should be:\r\n\r\n> = JanusGraph Development Process\r\n\r\nand other section headings should use the number of leading `=` equal to their header level. \r\n\r\nThe current approach of using different types of characters on a line is complex (need to remember which character means which heading level) and error-prone (must equal in length to the heading, or else it breaks. This is the type of thing I had to deal with during the global `s/Titan/Janusgraph/` cleanup; see [this commit](https://github.com/JanusGraph/janusgraph/commit/e21734fd1ffef90ef44a0ad7d2da0b2f5859baa4) for more details.\r\n\r\nI am working on a change to convert all existing headers to the Asciidoc-recommended approach, so it would be nice to not add any more of these anachronistic section titles.",
             "Comment Classification": ""
       },
       {
@@ -6260,7 +6260,7 @@
             "Comment ID": 594587256,
             "Comment Author": "jonatan-ivanov",
             "Comment Order": 36,
-            "Comment Body": "I would move this logic to a different method, for readability and because lambdas should be glue code: https://blog.agiledeveloper.com/2015/06/lambdas-are-glue-code.html",
+            "Comment Body": "I would move this logic to a different method, for readability and because lambdas should be glue code: http://blog.agiledeveloper.com/2015/06/lambdas-are-glue-code.html",
             "Comment Classification": ""
       },
       {
@@ -6268,7 +6268,7 @@
             "Comment ID": 594592012,
             "Comment Author": "jonatan-ivanov",
             "Comment Order": 37,
-            "Comment Body": "I would move this logic to a different method, for readability and because lambdas should be glue code: https://blog.agiledeveloper.com/2015/06/lambdas-are-glue-code.html",
+            "Comment Body": "I would move this logic to a different method, for readability and because lambdas should be glue code: http://blog.agiledeveloper.com/2015/06/lambdas-are-glue-code.html",
             "Comment Classification": ""
       },
       {
