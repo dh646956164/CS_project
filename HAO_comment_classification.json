@@ -485,7 +485,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 18,
             "Comment Body": "Can you add comments to this method or break the logic into more variables in the method. It is very difficult to understand the Scala magic here. You call the method `extractAggregatesAndExpressions` but what do the expression that come out of this method describe? Also you use too generic `aggs` and `agg` variables name with different data types and meaning.",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element" and "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element. Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
       },
       {
             "PR ID": 233601182,
@@ -2085,7 +2085,7 @@
             "Comment Author": "Ethanlm",
             "Comment Order": 4,
             "Comment Body": "This can be confusing when this is invoked (by multiple reporters who don't recognize PerReporterGauge). Thinking we should add some comment at least",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 159750327,
@@ -2093,7 +2093,7 @@
             "Comment Author": "sav007",
             "Comment Order": 1,
             "Comment Body": "should we call this: `useJavaBeansSemanticNaming`?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 159750327,
@@ -2101,7 +2101,7 @@
             "Comment Author": "digitalbuddha",
             "Comment Order": 5,
             "Comment Body": "Is it always going to be get? What if we have a variable named enabled, shouldn't it be `isEnabled`? ",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 415048477,
@@ -2109,7 +2109,7 @@
             "Comment Author": "designatednerd",
             "Comment Order": 27,
             "Comment Body": "I have two somewhat contradictory questions: \r\n- Why are we using multiple interfaces here if they're not adding any functionality?\r\n- Why isn't there an `ApolloSubscriptionCall<T>`?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 415048477,
@@ -2117,7 +2117,7 @@
             "Comment Author": "martinbonnin",
             "Comment Order": 20,
             "Comment Body": "Some users might not want to enable `ExperimentalCoroutinesApi` in their repo. As long as it's only for multiplatform I guess it's fine but the day `apollo-runtime-kotlin` becomes the default JVM implementation, it might be an issue (if the api hasn't been promoted to stable before that)",
-            "Comment Classification": ""
+            "Comment Classification": "Compatibility Issues"
       },
       {
             "PR ID": 415048477,
@@ -2125,7 +2125,7 @@
             "Comment Author": "martinbonnin",
             "Comment Order": 9,
             "Comment Body": "why not use the `interceptors` wording here instead ? `Executors` always remind me of https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executor.html but maybe I've done too much java.",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 415048477,
@@ -2133,7 +2133,7 @@
             "Comment Author": "martinbonnin",
             "Comment Order": 11,
             "Comment Body": "Why not just:\r\n```\r\nreturn RealRequestExecutorChain(executors).proceed(request = request)\r\n```\r\n?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 415048477,
@@ -2141,7 +2141,7 @@
             "Comment Author": "designatednerd",
             "Comment Order": 4,
             "Comment Body": "omg i want the `retryWhen` API for everything I do now",
-            "Comment Classification": ""
+            "Comment Classification": "Compatibility Issues"
       },
       {
             "PR ID": 415048477,
@@ -2149,7 +2149,7 @@
             "Comment Author": "designatednerd",
             "Comment Order": 5,
             "Comment Body": "Do these need tot be `TODO` or should they actively throw an exception?",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 415048477,
@@ -2157,7 +2157,7 @@
             "Comment Author": "designatednerd",
             "Comment Order": 29,
             "Comment Body": "`context` and `queue` here are properties of `NetworkTransport`, right? I *think* you're OK in terms of automatic reference counting here, but it might be worth doing some profiling to make sure you're not creating retain cycles. ",
-            "Comment Classification": ""
+            "Comment Classification": "Data & Resource Management"
       },
       {
             "PR ID": 415048477,
@@ -2165,7 +2165,7 @@
             "Comment Author": "designatednerd",
             "Comment Order": 28,
             "Comment Body": "is it such a rare occurrence that `ref` would be `null` that the force-unwrap is appropriate here? ",
-            "Comment Classification": ""
+            "Comment Classification": "Unvalidated Element"
       },
       {
             "PR ID": 415048477,
@@ -2173,7 +2173,7 @@
             "Comment Author": "designatednerd",
             "Comment Order": 30,
             "Comment Body": "Again if `producer` is a property of `NetworkTransport`, it's worth looking into what happens if the instance gets deallocated before this gets called. This is where you see `[weak self]` sprinkled liberally around Swift code, I'm not entirely sure what the equivalent is with coroutines and flows.",
-            "Comment Classification": ""
+            "Comment Classification": "Data & Resource Management"
       },
       {
             "PR ID": 415048477,
@@ -2181,7 +2181,7 @@
             "Comment Author": "martinbonnin",
             "Comment Order": 21,
             "Comment Body": "A common use case is to have an interceptor that can refresh the token. Should we add a concept of interceptors there as well ?",
-            "Comment Classification": ""
+            "Comment Classification": "Feature Completeness"
       },
       {
             "PR ID": 415048477,
@@ -2189,7 +2189,7 @@
             "Comment Author": "martinbonnin",
             "Comment Order": 22,
             "Comment Body": ":sunglasses: ",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 58318249,
@@ -2197,7 +2197,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 4,
             "Comment Body": "This will throw an exception if the condition is not met. How did you make sure that all the callers don't pass in null? \n\nIt's a risk that the exception may cause a thread to die. Before this change, such a bug may have been hidden but may not cause a production issue.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 58318249,
@@ -2205,7 +2205,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 29,
             "Comment Body": "Nit: would making it a checked exception be too restrictive? I assume it doesn't for the existing callers since they have to catch exceptions already. It's a small concern though.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 58318249,
@@ -2213,7 +2213,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 2,
             "Comment Body": "What's the purpose of the nestedId? Add a comment?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 58318249,
@@ -2221,7 +2221,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 1,
             "Comment Body": "What's the motivation for having this static method and making the constructor private?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 58318249,
@@ -2229,7 +2229,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 21,
             "Comment Body": "I still don't see a value to create these static methods. This adds unnecessary complexity although not much. What do you think of just using plain constructors?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 58318249,
@@ -2237,7 +2237,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 3,
             "Comment Body": "What's the use case for making this field mutable after the instance is created?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 58318249,
@@ -2245,7 +2245,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 5,
             "Comment Body": "Why this change? The old code sets shouldUpdate to false. You removed it. Could you explain your design?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 58318249,
@@ -2253,7 +2253,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 6,
             "Comment Body": "What do you mean?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 58318249,
@@ -2261,7 +2261,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 7,
             "Comment Body": "Can this return value cause public static Event create(Object runner, Type type, EventData eventData) {\n-    return new Event(runner, type, null, true);        +    Preconditions.checkNotNull(eventData, \"EventData was null\"); to throw an exception potentially?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 58318249,
@@ -2269,7 +2269,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 8,
             "Comment Body": "Same as above. How do you test this error condition?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Other Test related"
       },
       {
             "PR ID": 58318249,
@@ -2277,7 +2277,7 @@
             "Comment Author": "HappyRay",
             "Comment Order": 9,
             "Comment Body": "The caller has the status value already, what's the advantage of returning the same value?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 111755563,
@@ -2285,7 +2285,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 1,
             "Comment Body": "Change the year to 2017. Check other files as well",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 111755563,
@@ -2293,7 +2293,7 @@
             "Comment Author": "sameerajayasoma",
             "Comment Order": 3,
             "Comment Body": "Please change the class comment with the following.\r\n\r\n{@code BAnyType} represents any time in Ballerina. It is the root of the Ballerina type system.",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 111755563,
@@ -2301,7 +2301,7 @@
             "Comment Author": "sameerajayasoma",
             "Comment Order": 4,
             "Comment Body": "s/BValueType.class/BValue.class",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 111755563,
@@ -2309,7 +2309,7 @@
             "Comment Author": "sameerajayasoma",
             "Comment Order": 5,
             "Comment Body": "You can throw BLangExeceptionHelper.getRuntimeException()",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 111755563,
@@ -2317,7 +2317,7 @@
             "Comment Author": "sameerajayasoma",
             "Comment Order": 6,
             "Comment Body": "ANY TO JSON and ANY TO XML will fail, because those values does not inherit from BValueType",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 167635693,
@@ -2325,7 +2325,7 @@
             "Comment Author": "pubudu91",
             "Comment Order": 8,
             "Comment Body": "The parameters should be named(i.e: `\"path: Path to the location of matrix parameters\"`). The receiver should also be documented. ",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 167635693,
@@ -2333,7 +2333,7 @@
             "Comment Author": "shafreenAnfar",
             "Comment Order": 4,
             "Comment Body": "Shall we not use constants from carbon.messaging ?",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 167635693,
@@ -2341,7 +2341,7 @@
             "Comment Author": "shafreenAnfar",
             "Comment Order": 17,
             "Comment Body": "Shall we swap above two lines in order to maintain vertical affinity ?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 167635693,
@@ -2349,7 +2349,7 @@
             "Comment Author": "shafreenAnfar",
             "Comment Order": 24,
             "Comment Body": "Shall we say rawUrl ?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 167635693,
@@ -2357,7 +2357,7 @@
             "Comment Author": "shafreenAnfar",
             "Comment Order": 18,
             "Comment Body": "shall we rename this to extractMatrixParams?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 167635693,
@@ -2365,7 +2365,7 @@
             "Comment Author": "shafreenAnfar",
             "Comment Order": 23,
             "Comment Body": "shall say urlWithoutMatrixParam ?\r\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 167635693,
@@ -2373,7 +2373,7 @@
             "Comment Author": "shafreenAnfar",
             "Comment Order": 5,
             "Comment Body": "This should be getValidatedURI (and yeah I wrote that function :D)",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 167635693,
@@ -2381,7 +2381,7 @@
             "Comment Author": "chamil321",
             "Comment Order": 2,
             "Comment Body": "Shall we change this to Get the Matrix params........",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 167635693,
@@ -2389,7 +2389,7 @@
             "Comment Author": "chamil321",
             "Comment Order": 3,
             "Comment Body": "Change the version too",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 167635693,
@@ -2397,7 +2397,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 13,
             "Comment Body": "Shall we avoid this return statement by putting the below code to a if check with `pathToMatrixParamMap.containsKey(path)` and have one return statement at the end. IMO This will result in more readable code",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 167635693,
@@ -2405,7 +2405,7 @@
             "Comment Author": "chamil321",
             "Comment Order": 6,
             "Comment Body": "Shouldn't we check malformed paths such as\r\n- /mercedes/e55;color=/2006\r\n- /mercedes/e55;=black/2006\r\n\r\nin above 2nd case, splitMatrixParam.length == 2 but splitMatrixParam[0] is empty. So Should we check that too?",
-            "Comment Classification": ""
+            "Comment Classification": "Input Validation"
       },
       {
             "PR ID": 167635693,
@@ -2413,7 +2413,7 @@
             "Comment Author": "pubudu91",
             "Comment Order": 10,
             "Comment Body": "It would be better to include non-matrix param itself in the message. ie:\r\n`throw new BallerinaConnectorException(\"Found non matrix parameter \" + param + \" in \" + path)`",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 167635693,
@@ -2421,7 +2421,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 14,
             "Comment Body": "Why do we need to check splitPathSegment.length > 1 here?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 167635693,
@@ -2429,7 +2429,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 15,
             "Comment Body": "Do we need this if check here?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 167635693,
@@ -2437,7 +2437,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 16,
             "Comment Body": "Please add a doc comment for the class",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 167635693,
@@ -2445,7 +2445,7 @@
             "Comment Author": "chamil321",
             "Comment Order": 7,
             "Comment Body": "Shall we test a path which doesn't have a consecutive matrix path segments?\r\ni.e /hello/t2/john;age=2;color=white/product/foo;a=5;b=10\"",
-            "Comment Classification": ""
+            "Comment Classification": "Test Cases"
       },
       {
             "PR ID": 173906340,
@@ -2453,7 +2453,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 23,
             "Comment Body": "Incorrect year?",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 173906340,
@@ -2461,7 +2461,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 1,
             "Comment Body": "Incorrect year?",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 173906340,
@@ -2469,7 +2469,7 @@
             "Comment Author": "pubudu91",
             "Comment Order": 12,
             "Comment Body": "Use Antlr dependency directly.",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 173906340,
@@ -2477,7 +2477,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 6,
             "Comment Body": "Shall we rename this to keyVal or keyValue. same goes with keyvalSep - keyValSep or KeyValueSep",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 186609740,
@@ -2485,7 +2485,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 1,
             "Comment Body": "Shall we combine above two lines into a single line?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 186609740,
@@ -2493,7 +2493,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 2,
             "Comment Body": "Shall we reformat the above line ?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 346954706,
@@ -2501,7 +2501,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 9,
             "Comment Body": "```suggestion\r\n * External remote method implementations of the JDBC client.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 346954706,
@@ -2509,7 +2509,7 @@
             "Comment Author": "wggihan",
             "Comment Order": 6,
             "Comment Body": "```suggestion\r\n * @since 1.1.0\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 346954706,
@@ -2517,7 +2517,7 @@
             "Comment Author": "ThisaruGuruge",
             "Comment Order": 8,
             "Comment Body": "```suggestion\r\n * You may obtain a copy of the License at\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 346954706,
@@ -2525,7 +2525,7 @@
             "Comment Author": "wggihan",
             "Comment Order": 7,
             "Comment Body": "```suggestion\r\n * @since 1.1.0\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 420987992,
@@ -2533,7 +2533,7 @@
             "Comment Author": "KRVPerera",
             "Comment Order": 7,
             "Comment Body": "We can pre-allocate `ArrayList` with an `initialCapacity` if neeed.",
-            "Comment Classification": ""
+            "Comment Classification": "Data & Resource Management"
       },
       {
             "PR ID": 420987992,
@@ -2541,7 +2541,7 @@
             "Comment Author": "KRVPerera",
             "Comment Order": 6,
             "Comment Body": "we can call `symResolver.markParameterizedType(recordType, recordType.fields.values());` always and call again for\r\n`symResolver.markParameterizedType(recordType, recordType.restFieldType);` that way we don't need a new array list.",
-            "Comment Classification": ""
+            "Comment Classification": "Data & Resource Management"
       },
       {
             "PR ID": 420987992,
@@ -2549,7 +2549,7 @@
             "Comment Author": "KRVPerera",
             "Comment Order": 4,
             "Comment Body": "we can call `markParameterizedType(streamType, constraintType)` always and only call for `error` conditionally. \r\n\r\n```Java\r\nif (error != null) {\r\n\tmarkParameterizedType(streamType, error);\r\n}\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 420987992,
@@ -2557,7 +2557,7 @@
             "Comment Author": "KRVPerera",
             "Comment Order": 3,
             "Comment Body": "we can just make this `markParameterizedType(tupleType, memberTypes)` and call markParameterizedType again when `tupleTypeNode.restParamType != null` with `restParamType`\r\n`markParameterizedType(tupleType, tupleTypeNode.restParamType)`.\r\nWith caching on `markParameterizedType` we can avoid creating a new `ArrayList` completely.",
-            "Comment Classification": ""
+            "Comment Classification": "Data & Resource Management"
       },
       {
             "PR ID": 420987992,
@@ -2565,7 +2565,7 @@
             "Comment Author": "KRVPerera",
             "Comment Order": 2,
             "Comment Body": "If the `enclosingType` already has `PARAMETERIZED` flag we don't need to set again. Can skip loop.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 420987992,
@@ -2573,7 +2573,7 @@
             "Comment Author": "dulajdilshan",
             "Comment Order": 13,
             "Comment Body": "Copyright year\r\n```suggestion\r\n *   Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 456774627,
@@ -2581,7 +2581,7 @@
             "Comment Author": "Dilhasha",
             "Comment Order": 3,
             "Comment Body": "Can you check the formatting here? Seems this is not formatted correctly.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 456774627,
@@ -2589,7 +2589,7 @@
             "Comment Author": "anupama-pathirage",
             "Comment Order": 6,
             "Comment Body": "Not formatted properly",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 456774627,
@@ -2597,7 +2597,7 @@
             "Comment Author": "azinneera",
             "Comment Order": 1,
             "Comment Body": "Shall we make these comments more meaningful? e.g. `// This would return the ballerina equivalent <type> MockHandler(<mockFnObj>, args)`",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 610304775,
@@ -2605,7 +2605,7 @@
             "Comment Author": "MaryamZi",
             "Comment Order": 6,
             "Comment Body": "@rdhananjaya, hope this check here is sufficient. ",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 610304775,
@@ -2613,7 +2613,7 @@
             "Comment Author": "MaryamZi",
             "Comment Order": 1,
             "Comment Body": "Shall we do this assertion in b7a itself?",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 610304775,
@@ -2621,7 +2621,7 @@
             "Comment Author": "MaryamZi",
             "Comment Order": 2,
             "Comment Body": "Not directly related to this PR, but shall we add another service and test the scenario where the value is a string array if we don't have such a test already?",
-            "Comment Classification": ""
+            "Comment Classification": "Other Test related"
       },
       {
             "PR ID": 610304775,
@@ -2629,7 +2629,7 @@
             "Comment Author": "rdhananjaya",
             "Comment Order": 7,
             "Comment Body": "Shall we add another test case for service with just a '/`.\r\n```\r\nservice / on new Listener4() {\r\n}\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Other Test related"
       },
       {
             "PR ID": 610304775,
@@ -2637,7 +2637,7 @@
             "Comment Author": "MaryamZi",
             "Comment Order": 10,
             "Comment Body": "The spec says\r\n> The attach-point determines the second argument passed to the attach method: if the attach-point is absent, then the argument is nil; if it is a string-literal, then the argument is a string; otherwise, **it is an absolute-resource-path and the argument is an array of strings, with one string for each resource-path-segment.**\r\n\r\nIn this case, is it correct for the array to have a single member \"/\" or should it be an empty array? :thinking:  ",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 38669665,
@@ -2645,7 +2645,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 6,
             "Comment Body": "good riddance to this nonsense\n",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 38669665,
@@ -2653,7 +2653,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 7,
             "Comment Body": "add class comment\nIs this class intendend for subclassing? If yes, describe what is the contract for the subclass, ie what do subclasses need to do. If it's not intended for subclassing, make it final.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 38669665,
@@ -2661,7 +2661,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 8,
             "Comment Body": "i'm not happy about having a class with exactly 1 constant field in it. This field should do somewhere else and the class should go away i think.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 38669665,
@@ -2669,7 +2669,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 9,
             "Comment Body": "add class comment\nmake final or document subclass contract\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 38669665,
@@ -2677,7 +2677,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 10,
             "Comment Body": "does this deserve its own class? Should it just be a lambda constant somewhere else?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 38669665,
@@ -2685,7 +2685,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 11,
             "Comment Body": "final\n",
-            "Comment Classification": ""
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 38669665,
@@ -2693,7 +2693,7 @@
             "Comment Author": "davidadamsphd",
             "Comment Order": 66,
             "Comment Body": "Integer.MAX_VALUE?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 38669665,
@@ -2701,7 +2701,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 19,
             "Comment Body": "why fully qualified name? is that a remnant of Read/Read name overloading?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 38669665,
@@ -2709,7 +2709,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 12,
             "Comment Body": "The type here may be an issue if I want to have a filter that works on mutable reads.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Element Type"
       },
       {
             "PR ID": 38669665,
@@ -2717,7 +2717,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 13,
             "Comment Body": "having negatives in API names is bizarre. `read.isMapped()` looks so much better than `! read.isUnmapped()`\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 38669665,
@@ -2725,7 +2725,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 14,
             "Comment Body": "same here: `! read.failsVendorQualityCheck()` would look much better as `read.passesVendorQualityCheck()`\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 38669665,
@@ -2733,7 +2733,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 15,
             "Comment Body": "final class\n",
-            "Comment Classification": ""
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 38669665,
@@ -2741,7 +2741,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 20,
             "Comment Body": "and class comment\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 38669665,
@@ -2749,7 +2749,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 21,
             "Comment Body": "can we use stronger language than \"appears to be\"?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 38669665,
@@ -2757,7 +2757,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 22,
             "Comment Body": "you replaced my clever 1-liner with this? c'mon :) \n",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 38669665,
@@ -2765,7 +2765,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 23,
             "Comment Body": "happy to see this gone\n",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 38669665,
@@ -2773,7 +2773,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 25,
             "Comment Body": "Boolean -> boolean\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 38669665,
@@ -2781,7 +2781,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 24,
             "Comment Body": "IOException?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 38669665,
@@ -2789,7 +2789,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 26,
             "Comment Body": "unbox\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 38669665,
@@ -2797,7 +2797,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 27,
             "Comment Body": "i like this!  `read.setAttribute(BAQ_TAG, null)` -> `read.clearAttribute(BAQ_TAG)`\n",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 38669665,
@@ -2805,7 +2805,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 28,
             "Comment Body": "excellent use a comment\n",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 38669665,
@@ -2813,7 +2813,7 @@
             "Comment Author": "davidadamsphd",
             "Comment Order": 67,
             "Comment Body": "RandomGoogleRead please :)\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 38669665,
@@ -2821,7 +2821,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 30,
             "Comment Body": "add a private constructor\n",
-            "Comment Classification": ""
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 38669665,
@@ -2829,7 +2829,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 32,
             "Comment Body": "this name is too long. \n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 38669665,
@@ -2837,7 +2837,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 33,
             "Comment Body": "name too long\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 38669665,
@@ -2845,7 +2845,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 31,
             "Comment Body": "may want to make the maps unmodifiable at this point at the end of the initializer\n",
-            "Comment Classification": ""
+            "Comment Classification": "Data & Resource Management"
       },
       {
             "PR ID": 38669665,
@@ -2853,7 +2853,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 37,
             "Comment Body": "Either at the interface level or at the method level define whether the caller can perform modifying operations on the read and what happens if they do. Also, specify if the underlying object can change. Ie, once I have a GATKRead, can it change from under me (ie can a method on a GATKRead returns something and then the same method return something else some other time?)\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 38669665,
@@ -2861,7 +2861,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 51,
             "Comment Body": "I think you should add a comment stating that this interface is not intended to be implemented outside of the GATK core (ie clients are not supposed to implement it)\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 38669665,
@@ -2869,7 +2869,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 34,
             "Comment Body": "what does 'globally' mean? Anywhere in the world or just in this dataflow worker? Ie, is it like a hashcode or it this unique across machines?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 38669665,
@@ -2877,7 +2877,7 @@
             "Comment Author": "lbergelson",
             "Comment Order": 71,
             "Comment Body": "Does this include clipped bases? \n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 38669665,
@@ -2885,7 +2885,7 @@
             "Comment Author": "lbergelson",
             "Comment Order": 69,
             "Comment Body": "I assume null contig isn't allowed here?  Does this set the read is mapped flag?  I'm guessing not because of the unmapped reads with position thing?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 38669665,
@@ -2893,7 +2893,7 @@
             "Comment Author": "lbergelson",
             "Comment Order": 70,
             "Comment Body": "What happens if you pass in an unmapped locatable?  \n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 38669665,
@@ -2901,7 +2901,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 35,
             "Comment Body": "define if this array is modifiable by the caller\n",
-            "Comment Classification": ""
+            "Comment Classification": "Data & Resource Management"
       },
       {
             "PR ID": 38669665,
@@ -2909,7 +2909,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 36,
             "Comment Body": "define if this array is modifiable by the caller\n",
-            "Comment Classification": ""
+            "Comment Classification": "Data & Resource Management"
       },
       {
             "PR ID": 38669665,
@@ -2917,7 +2917,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 38,
             "Comment Body": "it is going to be pretty confusing to have a isPaired and isProperlyPaired operations\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 38669665,
@@ -2925,7 +2925,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 39,
             "Comment Body": "would much prefer isMapped but can live with this for now. Not pretty though\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 38669665,
@@ -2933,7 +2933,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 40,
             "Comment Body": "do we need this method given the isFirstOfPair() method? What is the relationship between these two?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 38669665,
@@ -2941,7 +2941,7 @@
             "Comment Author": "lbergelson",
             "Comment Order": 74,
             "Comment Body": "These seem weird.  It doesn't seem right to have these baked into the interface.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 38669665,
@@ -2949,7 +2949,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 41,
             "Comment Body": "interface comment\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 38669665,
@@ -2957,7 +2957,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 42,
             "Comment Body": "class comment\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 38669665,
@@ -2965,7 +2965,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 43,
             "Comment Body": "final, I hope\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 38669665,
@@ -2973,7 +2973,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 44,
             "Comment Body": "wait what? what does it mean to set a UUID to a immutable read?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 38669665,
@@ -2981,7 +2981,7 @@
             "Comment Author": "davidadamsphd",
             "Comment Order": 68,
             "Comment Body": "@akiezun \nSo, we need a short write-up on this in at least one Javadoc. There isn't a perfect solution for our \"deterministically encodable surrogate for read\" problem.\n\nOur solution is: A read is unique upon creation. Any mutation of the read means it's still the same read. A clone of the read is a new read. Users will need to be aware of this convention. It's not ideal, but it's the best we've got. We need to document it everywhere to make sure clients are aware.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 38669665,
@@ -2989,7 +2989,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 46,
             "Comment Body": "comment seems useless here\n",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 38669665,
@@ -2997,7 +2997,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 45,
             "Comment Body": "this reads weird. `return assert...`. Prefer to split assertion and return to two lines\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 38669665,
@@ -3005,7 +3005,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 47,
             "Comment Body": "these 0, 1, 2 magic numbers in this class need to be extracted as constants\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 38669665,
@@ -3013,7 +3013,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 52,
             "Comment Body": "why not add them to the interface and delete this class?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 38669665,
@@ -3021,7 +3021,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 53,
             "Comment Body": "make final and add the field to serialize\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 38669665,
@@ -3029,7 +3029,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 55,
             "Comment Body": "can you simplify this code by using methods on the Comparator interface, such as `comparingInt`, `thenComparing` etc?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 38669665,
@@ -3037,7 +3037,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 1,
             "Comment Body": "Integer.compare\n",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 38669665,
@@ -3045,7 +3045,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 54,
             "Comment Body": "use Integer.compare, don't use subtraction for comparing\n",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 38669665,
@@ -3053,7 +3053,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 56,
             "Comment Body": "is there an HTSJDK tag for this attribute? or BQSR?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 38669665,
@@ -3061,7 +3061,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 2,
             "Comment Body": "why not put this on the GATKRead interface itself?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 38669665,
@@ -3069,7 +3069,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 3,
             "Comment Body": "move to `GATKRead`\n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 38669665,
@@ -3077,7 +3077,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 4,
             "Comment Body": "move to BaseUtils or something\n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 38669665,
@@ -3085,7 +3085,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 5,
             "Comment Body": "move to `GATKRead`\n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 38669665,
@@ -3093,7 +3093,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 57,
             "Comment Body": "do these constants belong here? This seems like a very odd place for them? Doesnt htsjdk have a home for them?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Wrong Location"
       },
       {
             "PR ID": 38669665,
@@ -3101,7 +3101,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 58,
             "Comment Body": "this code suggests that the constant should be renamed to `SAM_READ_REV_STRAND_FLAG` or something\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 38669665,
@@ -3109,7 +3109,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 59,
             "Comment Body": "make final, add class comment\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 38669665,
@@ -3117,7 +3117,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 60,
             "Comment Body": "class comment\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 38669665,
@@ -3125,7 +3125,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 61,
             "Comment Body": "really catch all RuntimeExceptions here? sounds weird\n",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 38669665,
@@ -3133,7 +3133,7 @@
             "Comment Author": "akiezun",
             "Comment Order": 62,
             "Comment Body": "why SAMException here and RuntimeException in `getAttributeAsInteger`?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 118653262,
@@ -3141,7 +3141,7 @@
             "Comment Author": "romani",
             "Comment Order": 1,
             "Comment Body": "this file is used only ones in this Check only , please move file.",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 118653262,
@@ -3149,7 +3149,7 @@
             "Comment Author": "rnveach",
             "Comment Order": 5,
             "Comment Body": "@romani Like I asked in a similar PR, should we keep this file just for its public interfaces used in another input, or should we merge it so our inputs are completely standalone?",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 151315894,
@@ -3157,7 +3157,7 @@
             "Comment Author": "romani",
             "Comment Order": 2,
             "Comment Body": "please add comment here \"// type could be in fully qualified form, so we go up to Type token\"",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 151315894,
@@ -3165,7 +3165,7 @@
             "Comment Author": "rnveach",
             "Comment Order": 16,
             "Comment Body": "> Only [the last] one\r\n\r\nWhat is the `[]` suppose to mean here? If you are trying to specify 'the last comment' along with the 'only one', why don't we put it on the end of the sentence.\r\nEx: `Only one documentation comment per declaration statement is recognized by the Javadoc tool. If there are many comments, it will only recognize the last one.`",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 151315894,
@@ -3173,7 +3173,7 @@
             "Comment Author": "rnveach",
             "Comment Order": 3,
             "Comment Body": "does it make more sense to change this from `do {} while()` to `while () {}`?\r\nif seems weird to see `if (sibling != null) {` followed by `} while (sibling != null);`.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 151315894,
@@ -3181,7 +3181,7 @@
             "Comment Author": "romani",
             "Comment Order": 1,
             "Comment Body": "Please move update for spaces in separate PR , I will merge it quickly.\r\n\r\nThis PR is going to be complicated, lets minimize unrelated changes.",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 151315894,
@@ -3189,7 +3189,7 @@
             "Comment Author": "romani",
             "Comment Order": 4,
             "Comment Body": ">  only the last one will be used\r\n\r\nwe need to change wording here, as in example below last comment with javadoc identifier is `/** Not a javadoc (ignored). */`\r\nWe need to define order/direction for \"last\" - from bottom to top.\r\n\r\nhttp://www.oracle.com/technetwork/java/javase/documentation/index-137868.html\r\n\r\n> A doc comment is written in HTML and must precede a class, field, constructor or method declaration.\r\n\r\nwe might need to add to this ... \" (above annotations) \", so it will be:\r\n\"...character and placed above above annotations of class (if preset) definition, ....method definition or field.\"\r\n\r\n>or annotation field definition.\r\n\r\nis a weird term from checkstyle ast, jdk does have such term - https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.7 , so lets avoid it in public\r\n\r\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 151315894,
@@ -3197,7 +3197,7 @@
             "Comment Author": "romani",
             "Comment Order": 5,
             "Comment Body": "then the comment ==> then the Javadoc comment",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 151315894,
@@ -3205,7 +3205,7 @@
             "Comment Author": "romani",
             "Comment Order": 6,
             "Comment Body": "1)\r\n>comments\r\n\r\n\"multiline comments with javadoc identifiers\". \r\nAll of them are comments, looks like javadoc ..... but we call javadoc comment only one that most matching our criteria.\r\n\r\n2) \r\n>only the last one will be used\r\n\r\n\"last\" is not good word here, as in your example last is `/** Not a javadoc (ignored). */` , fact that it is separated by new line is not countable.\r\nLets use \"most nearest on top(above) multiline comment with javadoc identifier\". ",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 151315894,
@@ -3213,7 +3213,7 @@
             "Comment Author": "rnveach",
             "Comment Order": 8,
             "Comment Body": "> only the nearest on top (above) multiline comment\r\n\r\nThis sounds funny.\r\nI assume you are trying to say `only the one closest to the definition, right above it, with the javadoc identifier will be used.`",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 151315894,
@@ -3221,7 +3221,7 @@
             "Comment Author": "romani",
             "Comment Order": 7,
             "Comment Body": "please add in front:\r\n`Javadoc comment contains of: summary(first) sentence, documentation section, tag section.`",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 151315894,
@@ -3229,7 +3229,7 @@
             "Comment Author": "rnveach",
             "Comment Order": 9,
             "Comment Body": "`Javadoc comment contains of:` => `Javadoc comments contain:`\r\n`clear and punchy, short and ended by` => `clear, punchy, short, and is ended by`\r\n`dot symbol` => `period symbol`\r\n\r\n> Javadoc comments contain\r\n\r\nShould this be `should contain`? These areas aren't really required otherwise we wouldn't need the `JavadocMethod` check. Tag section is completely optional if there are no parameters/returns/throws.",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 151315894,
@@ -3237,7 +3237,7 @@
             "Comment Author": "rnveach",
             "Comment Order": 10,
             "Comment Body": "> The tag section starts with \r\n\r\nAs mentioned in previous item, tag section is technically optional.",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 151315894,
@@ -3245,7 +3245,7 @@
             "Comment Author": "rnveach",
             "Comment Order": 17,
             "Comment Body": "This sentence hasn't changed since I pointed it out at https://github.com/checkstyle/checkstyle/pull/5252#discussion_r153624465 .",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 406948586,
@@ -3253,7 +3253,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 1,
             "Comment Body": "indentation",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 406948586,
@@ -3261,7 +3261,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 5,
             "Comment Body": "`files contain` may be `file contains` is more precise.",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 406948586,
@@ -3269,7 +3269,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 12,
             "Comment Body": "please make list like `<ul>` and items in `<li>` tag",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 406948586,
@@ -3277,7 +3277,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 2,
             "Comment Body": "above lines should be in description, here should be examples",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 406948586,
@@ -3285,7 +3285,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 17,
             "Comment Body": "please change it to block comment example. Showing empty file looks strange",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 406948586,
@@ -3293,7 +3293,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 13,
             "Comment Body": "Please change examples.\r\nMake it like\r\n```\r\nContent of the file:\r\n... // violation\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 406948586,
@@ -3301,7 +3301,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 22,
             "Comment Body": "no need to escape asterisk",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 406948586,
@@ -3309,7 +3309,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 24,
             "Comment Body": "violation is reported on line 1, so violation comment should be there as well",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 406948586,
@@ -3317,7 +3317,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 4,
             "Comment Body": "it is better to extract these endings into some list and iterate over it, it will be more readable",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 406948586,
@@ -3325,7 +3325,7 @@
             "Comment Author": "pbludov",
             "Comment Order": 25,
             "Comment Body": "Please use google.Truth here\r\n```\r\nassertWithMessage(\"Required tokens array is not empty\")\r\n    .that(checkObj.getRequiredTokens())\r\n    .isEmpty();\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 406948586,
@@ -3333,7 +3333,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 3,
             "Comment Body": "can be added one more test with both single and multiline comments",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 406948586,
@@ -3341,7 +3341,7 @@
             "Comment Author": "rnveach",
             "Comment Order": 30,
             "Comment Body": "Look at top text, it says are \"not compatible ... till ....\". This check will never be compatible. It always logs by line number since there is never any AST.\r\n\r\nWe need to follow pattern of other checks where we couldn't support them, `Regexp` and `RegexpSinglelineJava` and give a reason. xdoc should also be updated too.",
-            "Comment Classification": ""
+            "Comment Classification": "Testing"
       },
       {
             "PR ID": 406948586,
@@ -3349,7 +3349,7 @@
             "Comment Author": "pbludov",
             "Comment Order": 26,
             "Comment Body": "The description of the check is confusing. Will any file with a single/multi-line comment be considered empty? Or just a file with there is nothing except for some comments within?\r\nCould you please make it more clear?",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 406948586,
@@ -3357,7 +3357,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 18,
             "Comment Body": "indentation here and above should be 2 spaces",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 406948586,
@@ -3365,7 +3365,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 19,
             "Comment Body": "same here and above",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 406948586,
@@ -3373,7 +3373,7 @@
             "Comment Author": "strkkk",
             "Comment Order": 11,
             "Comment Body": "weird indentation",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 257705961,
@@ -3381,7 +3381,7 @@
             "Comment Author": "agavra",
             "Comment Order": 2,
             "Comment Body": "should we test successful casts that aren't no-op here?",
-            "Comment Classification": ""
+            "Comment Classification": "Testing"
       },
       {
             "PR ID": 257705961,
@@ -3389,7 +3389,7 @@
             "Comment Author": "agavra",
             "Comment Order": 3,
             "Comment Body": "just wondering - why prefer static methods to constructors?",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 257705961,
@@ -3397,7 +3397,7 @@
             "Comment Author": "agavra",
             "Comment Order": 4,
             "Comment Body": "```suggestion\r\n    this.valueType = requireNonNull(valueType, \"valueType\");\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 257705961,
@@ -3405,7 +3405,7 @@
             "Comment Author": "agavra",
             "Comment Order": 5,
             "Comment Body": "This may be a good candidate for `LinkedHashMap<String, Field>` - a rarely appropriate but exciting data structure! Or you can keep it simple and ignore this comment \ud83e\udd37\u200d\u2642\ufe0f .",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 257705961,
@@ -3413,7 +3413,7 @@
             "Comment Author": "agavra",
             "Comment Order": 6,
             "Comment Body": "The word `Logical` has been overloaded in recent discussions. I think either a short discussion here in the javadoc describing what different schemas exist (logical/SQL/physical/connect/avro...) and their hierarchy or a link to an external discussion would be useful. ",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 257705961,
@@ -3421,7 +3421,7 @@
             "Comment Author": "agavra",
             "Comment Order": 8,
             "Comment Body": "What's happens if there is no value schema (e.g. generic/wildcard arrays)? At a minimum, we should explicitly check that it has a value schema and later when I implement KLIP-1 I can fix it up. Same comment goes for Maps",
-            "Comment Classification": ""
+            "Comment Classification": "Input Validation"
       },
       {
             "PR ID": 257705961,
@@ -3429,7 +3429,7 @@
             "Comment Author": "agavra",
             "Comment Order": 7,
             "Comment Body": "@rodesai  mentioned that connect supports non-string keys. Is this something that we don't support?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 257705961,
@@ -3437,7 +3437,7 @@
             "Comment Author": "agavra",
             "Comment Order": 9,
             "Comment Body": "we should also test the case where they are the same (e.g. both `PrimitiveType.of(BOOLEAN)`)",
-            "Comment Classification": ""
+            "Comment Classification": "Test Cases"
       },
       {
             "PR ID": 257705961,
@@ -3445,7 +3445,7 @@
             "Comment Author": "agavra",
             "Comment Order": 10,
             "Comment Body": "you can use `ImmutableBiMap` if you are so inclined",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 257705961,
@@ -3453,7 +3453,7 @@
             "Comment Author": "agavra",
             "Comment Order": 11,
             "Comment Body": "so meta!",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 193372096,
@@ -3461,7 +3461,7 @@
             "Comment Author": "jdmpapin",
             "Comment Order": 3,
             "Comment Body": "Could this (and the other new cases) use `getArgument()` instead of `getChild()`, just in case we somehow get an indirect call?",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 193372096,
@@ -3469,7 +3469,7 @@
             "Comment Author": "jdmpapin",
             "Comment Order": 4,
             "Comment Body": "I'm a bit concerned about repeating the operation that produces the `MethodHandle` here. To determine that we expect this to work, we need to consider every address-typed IL opcode. A number of them have to be ruled out on the basis that a node with a particular opcode couldn't possibly have a known object constraint (e.g. `new`, `aladd`, `l2a`, `loadaddr`). The remaining opcodes must all expect a symref, and they must all be safe to repeat and guaranteed to produce the same result if repeated (given that it was alright to constrain the result in the first place).\r\n\r\nI expect that currently calls won't get known object constraints on their results, but it's possible that some new analysis could allow us to constrain a call that way in the future. If that were to happen, then any such call with side effects would not (in general) be safe to repeat.\r\n\r\nIn the case of a load that's subject to folding, duplicating the load creates an additional point at which the folding needs to occur (in order to get the intended benefit). That additional folding must be properly tracked and allowed for.\r\n\r\nI think it would be cleaner to transmute the call into a `PassThrough` in order to continue using the original node. It should be relatively straightforward to have the current pass of VP remove the `PassThrough` everywhere it occurs, by adding a handler for it that (constrains and then) returns the child.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 193372096,
@@ -3477,7 +3477,7 @@
             "Comment Author": "jdmpapin",
             "Comment Order": 5,
             "Comment Body": "Is it necessary to create `compressedRefs` here? My impression is that these anchors are created as necessary during lowering.\r\n\r\nIf we do need `compressedRefs`, then `heapBaseKonst` should probably be an `iconst` for 32-bit.",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 193372096,
@@ -3485,7 +3485,7 @@
             "Comment Author": "andrewcraik",
             "Comment Order": 1,
             "Comment Body": "Where's the code for this comment? I don't see anything obvious about AOT here",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 193372096,
@@ -3493,7 +3493,7 @@
             "Comment Author": "jdmpapin",
             "Comment Order": 9,
             "Comment Body": "We should check before this access that `mhObject` really is an instance of `MethodHandle`. If we're (unknowingly) looking at a dead path, then it's possible to have some other type of object instead.",
-            "Comment Classification": ""
+            "Comment Classification": "Input Validation"
       },
       {
             "PR ID": 193372096,
@@ -3501,7 +3501,7 @@
             "Comment Author": "jdmpapin",
             "Comment Order": 6,
             "Comment Body": "I think this is okay because `node` was originally a call and therefore it was assigned a fresh value number.",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 193372096,
@@ -3509,7 +3509,7 @@
             "Comment Author": "jdmpapin",
             "Comment Order": 11,
             "Comment Body": "This looks just like `transformCallNodeToPassThrough()`, which is called in the other new cases. Might it make sense to relax the assertion in that function somehow instead of duplicating its code here?",
-            "Comment Classification": ""
+            "Comment Classification": "Duplication"
       },
       {
             "PR ID": 193372096,
@@ -3517,7 +3517,7 @@
             "Comment Author": "jdmpapin",
             "Comment Order": 8,
             "Comment Body": "Like above, `mhObject` needs to be a `PrimitiveHandle`",
-            "Comment Classification": ""
+            "Comment Classification": "Input Validation"
       },
       {
             "PR ID": 193372096,
@@ -3525,7 +3525,7 @@
             "Comment Author": "jdmpapin",
             "Comment Order": 10,
             "Comment Body": "This always requires a constraint on `mh` to guarantee it's a (non-null) `DirectHandle`, even when `receiverConstraint->isNonNullObject()` suffices to eliminate the call without reading `final_modifiers`. Was that intentional?\r\n\r\nI think it's still possible to remove the call even if `mh` could be null. The call would be under a `NULLCHK`, and replacing it with `PassThrough` should leave that `NULLCHK` in place, now checking `mh` without calling.",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 193372096,
@@ -3533,7 +3533,7 @@
             "Comment Author": "jdmpapin",
             "Comment Order": 7,
             "Comment Body": "This access should be safe because a valid `modifierOffset` was found from the class of `mhObject` :+1: \r\n\r\nHere, if the code is on a dead path, that class might not be `DirectHandle`, but it contains an integer-typed field at `modifierOffset`, and it doesn't matter whether or not the call is removed.",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 224090121,
@@ -3541,7 +3541,7 @@
             "Comment Author": "llxia",
             "Comment Order": 3,
             "Comment Body": "Specify `<subset>Valhalla</subset>` means this test will not run in any regular build. Is this intended to run manually only?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 224090121,
@@ -3549,7 +3549,7 @@
             "Comment Author": "acrowthe",
             "Comment Order": 1,
             "Comment Body": "Should be `Integer`, not `Interger`. Occurs on both line 194 and 195",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 224090121,
@@ -3557,7 +3557,7 @@
             "Comment Author": "llxia",
             "Comment Order": 2,
             "Comment Body": "I think only `JDK_VERSION` is needed. We do not need `JAVA_VERSION`. ",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 224090121,
@@ -3565,7 +3565,7 @@
             "Comment Author": "llxia",
             "Comment Order": 4,
             "Comment Body": "Is this parameter used in the test?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 305229740,
@@ -3573,7 +3573,7 @@
             "Comment Author": "ymanton",
             "Comment Order": 4,
             "Comment Body": "I think you mean \"milli\" here.",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 305229740,
@@ -3581,7 +3581,7 @@
             "Comment Author": "gita-omr",
             "Comment Order": 1,
             "Comment Body": "I think '{' and '}' should be shifted by 3 spaces.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 305229740,
@@ -3589,7 +3589,7 @@
             "Comment Author": "ymanton",
             "Comment Order": 2,
             "Comment Body": "Can you use hex for the immediates? Most references to these functions in headers and documentation use hex for the addresses as well so it would make searching easier.",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 305229740,
@@ -3597,7 +3597,7 @@
             "Comment Author": "ymanton",
             "Comment Order": 5,
             "Comment Body": "You should be able to remove \"r3\" from the clobber list for all cases now since it's bound to `retval`.",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 305229740,
