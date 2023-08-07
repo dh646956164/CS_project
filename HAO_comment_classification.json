@@ -3605,7 +3605,7 @@
             "Comment Author": "ymanton",
             "Comment Order": 3,
             "Comment Body": "You have to return whatever the millicode function returned, rather than 0 like we do on Linux. On AIX these functions can actually fail and return non-zero and we have to handle the errors appropriately.\r\n\r\nCan you try something like this?\r\n\r\n```\r\nregister int retval asm(\"r3\");\r\nasm(\"bla %1\" : \"=r\" (retval) : \"i\" (0x...) : \"r4\", \"lr\");\r\nreturn retval;\r\n```\r\n\r\nHopefully that does the trick and generates the minimal number of instructions.",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 375601641,
@@ -3613,7 +3613,7 @@
             "Comment Author": "dmitripivkine",
             "Comment Order": 1,
             "Comment Body": "How it suppose to work for run-time selected CR? For all other cases Remembered Set Cards is an array of `MM_RememberedSetCard[]`. So I would assume for run-time selected CR it is U_32 used in each U_64. But code below (add and subtract) suggests cards located contiguously and my assumption is wrong. Did I miss something?\r\nLooks like Remembered Set Cards memory is used like an array of U_32 for CR and array of U_64 and for run-time CR it is not an array of `MM_RememberedSetCard[]` any more. Technically it would work but it is confusing for me slightly. Any opinions on this? ",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 375601641,
@@ -3621,7 +3621,7 @@
             "Comment Author": "amicic",
             "Comment Order": 10,
             "Comment Body": "These 2 lines could be more concise by using GC_SlotObject::readReferenceFromSlot() instead of readSlot&mmPointerFromToken\r\n\r\n\r\n",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 375601641,
@@ -3629,7 +3629,7 @@
             "Comment Author": "amicic",
             "Comment Order": 7,
             "Comment Body": "This is cleaner, but I getting greedy and I'll suggest more (but if you feel it's excessive requirement, no problem - we can go with this as-is and I can re-eval my thinking at a later point with fresh brain)\r\n\r\nI'd like to see a field uintptr_t/uint_32 (same as you had with typedef orignal) inside this class. Field name could be 'address' (or 'value'). We would have a constructor and allow instantiation. We could even have  getter/setter to access address field, although it's probably excessive - the field could just simple be a public.\r\n\r\nThen,\r\nUDATA card = 0;\r\nwould turn into\r\nCard card(0);\r\n\r\nreadCard would return _instance_ of Card, and since  operator '=' would work, code like\r\n\r\nUDATA card = readCard(); would revert back to\r\n\r\nCard card = readCard(...).\r\n\r\nPassing card as parameter (of type Card)  in a method would also work since there is default copy operator.\r\n\r\nOperator == is unfortunately not defined by default so it should be defined or a method isEqual should be introduced.\r\n\r\nVarious spots in the code that do arithmetic operations under card will have to access it with\r\ncard.address rather than just using card. For example class methods substruct/add would than have to do something like:\r\n\r\n(uint32_t*)base.address + index\r\n\r\nFinally, the 4 methods (all except cardSize()) could even turn into non-statics.",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 375601641,
@@ -3637,7 +3637,7 @@
             "Comment Author": "amicic",
             "Comment Order": 4,
             "Comment Body": "I said this before, but there should be a helper like EnvBase::getReferenceSize(). You've just introduced similar one for RS Card size. But this being an OpenJ9 change and EnvBase being in OMR, of course, this is not the right moment to introduce it.",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 375601641,
@@ -3645,7 +3645,7 @@
             "Comment Author": "amicic",
             "Comment Order": 5,
             "Comment Body": "Sooner or later tight loops like this should be optimized so that 'is CR' check done ideally only once per iteration. I can see 4 hidden checks here.",
-            "Comment Classification": ""
+            "Comment Classification": "Algorithmic Efficiency/Performance"
       },
       {
             "PR ID": 375601641,
@@ -3653,7 +3653,7 @@
             "Comment Author": "dmitripivkine",
             "Comment Order": 21,
             "Comment Body": "Would you please remove `++` from `toIndex++` but add `toIndex += 1;` after write?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 375601641,
@@ -3661,7 +3661,7 @@
             "Comment Author": "amicic",
             "Comment Order": 15,
             "Comment Body": "please use MAX_BUFFER_SIZE * MM_RememberedSetCard::cardSize(env->compressObjectReferences()) \r\n\r\nas-is is unclear if it's relying on card size or obj ref size",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 375601641,
@@ -3669,7 +3669,7 @@
             "Comment Author": "dmitripivkine",
             "Comment Order": 22,
             "Comment Body": "Same here: could _cardIndex be incremented in separate line please?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 420274222,
@@ -3677,7 +3677,7 @@
             "Comment Author": "zl-wang",
             "Comment Order": 1,
             "Comment Body": "This is wrong. It deals with legitimate offsets such as 0x80000000 wrongly, turning them into positive offsets. You need to test specifically the other situations.",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 420274222,
@@ -3685,7 +3685,7 @@
             "Comment Author": "gita-omr",
             "Comment Order": 4,
             "Comment Body": "Could you please clarify why this instruction is needed? I thought just lis would be enough for any HI_VALUE.",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 751883514,
@@ -3693,7 +3693,7 @@
             "Comment Author": "keithc-ca",
             "Comment Order": 30,
             "Comment Body": "All text files should have a final newline.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 751883514,
@@ -3701,7 +3701,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 7,
             "Comment Body": "```suggestion\r\n/*[IF JAVA_SPEC_VERSION == 8] */\r\n```\r\n\r\nDon't add more references to Java 9 into the code base.  We  should only refer to LTS releases (8, 11, 17) once they've occurred.  The intermediate feature releases are best expunged from the code base",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 751883514,
@@ -3709,7 +3709,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 8,
             "Comment Body": "Why this refactor?  The other format was more readable",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 751883514,
@@ -3717,7 +3717,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 10,
             "Comment Body": "Modify isn't a great description as this is append only.  Maybe reword as \"Append new env variables to the set returned by ....\"",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 751883514,
@@ -3725,7 +3725,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 9,
             "Comment Body": "```suggestion\r\n\t * Modify environment variables returned by ProcessEnvironment.getenv(...) upon\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 751883514,
@@ -3733,7 +3733,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 13,
             "Comment Body": "What's a stacktrace from the this lambda look like?  Would it aid debugging / problem determination if this was a named entity?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 751883514,
@@ -3741,7 +3741,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 12,
             "Comment Body": "```suggestion\r\n\tprivate void registerRestoreEnvVariablesHook() {\r\n```\r\n\r\nClearer name?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 751883514,
@@ -3749,7 +3749,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 11,
             "Comment Body": "```suggestion\r\n\tprivate static RestoreException throwSetEnvException(Throwable cause) {\r\n\t\tthrow new RestoreException(\"Failed to setup new environment variables\", 0, cause);\r\n\t}\r\n```\r\n\r\nHaving this helper throw the exception - and have the callers call it with `throw createSetEnvException(...)` ensures that both the reader of the code knows that execution can't continue and means you don't need to worry about the caller forgetting the `throw`.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 751883514,
@@ -3757,7 +3757,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 14,
             "Comment Body": "```suggestion\r\n\tpublic static void registerPreCheckpointHook(int priority, String name, Runnable hook) {\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 751883514,
@@ -3765,7 +3765,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 15,
             "Comment Body": "```suggestion\r\n\t\t\tif (System.getProperty(\"enable.j9internal.checkpoint.hook.api.debug\") != null) { //$NON-NLS-1$\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 751883514,
@@ -3773,7 +3773,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 29,
             "Comment Body": "typo\r\n```suggestion\r\n\t\tboolean debug = System.getProperty(\"enable.j9internal.checkpoint.hook.api.debug\") != null; //$NON-NLS-1$\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 751883514,
@@ -3781,7 +3781,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 17,
             "Comment Body": "Should this class implement both `equals` and `hashcode`?  Given it's an immutable data holder, doing so should be straightforward",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 751883514,
@@ -3789,7 +3789,7 @@
             "Comment Author": "gacholio",
             "Comment Order": 2,
             "Comment Body": "Needs doc - minimally, must specify that exclusive is held.",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 751883514,
@@ -3797,7 +3797,7 @@
             "Comment Author": "gacholio",
             "Comment Order": 1,
             "Comment Body": "Is this the same as J9_PRIVATE_FLAGS_SYSTEM_THREAD? If not, both may need to be considered.",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 751883514,
@@ -3805,7 +3805,7 @@
             "Comment Author": "gacholio",
             "Comment Order": 3,
             "Comment Body": "This test is insufficient in the presence of atomic-free. See: https://github.com/eclipse-openj9/openj9/blob/969d44b5e4236ffcb7860205ccea536fcad542d4/runtime/oti/VMAccess.hpp#L391-L419",
-            "Comment Classification": ""
+            "Comment Classification": "Test Cases"
       },
       {
             "PR ID": 751883514,
@@ -3813,7 +3813,7 @@
             "Comment Author": "keithc-ca",
             "Comment Order": 31,
             "Comment Body": "This isn't legal C code: a declaraction may not appear after a statement (`Assert_CRIU_true`).",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 751883514,
@@ -3821,7 +3821,7 @@
             "Comment Author": "gacholio",
             "Comment Order": 24,
             "Comment Body": "Unnecessary - holding exclusive means holding this monitor already.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 751883514,
@@ -3829,7 +3829,7 @@
             "Comment Author": "gacholio",
             "Comment Order": 26,
             "Comment Body": "Not required - the mutexxxing will be done in the halt helpers if need be.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 751883514,
@@ -3837,7 +3837,7 @@
             "Comment Author": "DanHeidinga",
             "Comment Order": 18,
             "Comment Body": "Won't this be really easy to deadlock if any other thread - that has just been halted for inspection - is inside a synchronized method that one of the hooks needs to access?\r\n\r\nIt's probably OK to start with this but we should be aware of the deadlock possibility and maybe doc the risk in the `J9InternalCheckpointHook` class",
-            "Comment Classification": ""
+            "Comment Classification": "Security Concerns"
       },
       {
             "PR ID": 751883514,
@@ -3845,7 +3845,7 @@
             "Comment Author": "keithc-ca",
             "Comment Order": 32,
             "Comment Body": "Inconsistent indentation.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 751883514,
@@ -3853,7 +3853,7 @@
             "Comment Author": "gacholio",
             "Comment Order": 4,
             "Comment Body": "`result` is really too long?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 751883514,
@@ -3861,7 +3861,7 @@
             "Comment Author": "gacholio",
             "Comment Order": 6,
             "Comment Body": "Is it the intent to leave the exception pending in the failure case?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 751883514,
@@ -3869,7 +3869,7 @@
             "Comment Author": "gacholio",
             "Comment Order": 5,
             "Comment Body": "Same comments as above.",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 154852948,
@@ -3877,7 +3877,7 @@
             "Comment Author": "ljacomet",
             "Comment Order": 29,
             "Comment Body": "> that takes in a collection of white listed classes authorised for deserialization",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 154852948,
@@ -3885,7 +3885,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 2,
             "Comment Body": "You should be using the wildcard `Class<?>` here instead of the raw type - same goes for every other Class reference added.",
-            "Comment Classification": ""
+            "Comment Classification": "Element Type"
       },
       {
             "PR ID": 154852948,
@@ -3893,7 +3893,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 1,
             "Comment Body": "This is a breaking API change, not sure what policy is on this atm.  Would it be better or worse to have the default implementation call the original non-whitelisting method?",
-            "Comment Classification": ""
+            "Comment Classification": "Feature Completeness"
       },
       {
             "PR ID": 154852948,
@@ -3901,7 +3901,7 @@
             "Comment Author": "ljacomet",
             "Comment Order": 28,
             "Comment Body": "code formatting",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 154852948,
@@ -3909,7 +3909,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 3,
             "Comment Body": "This variable isn't used.",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 154852948,
@@ -3917,7 +3917,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 4,
             "Comment Body": "Should we care if a primitive wrapper class hasn't been whitelisted?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 154852948,
@@ -3925,7 +3925,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 6,
             "Comment Body": "This null special casing is a bit ugly.  Would it be easier to write a \"contains-all\" set implementation?  You could even just have a Predicate instead of an explicit whitelist.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 154852948,
@@ -3933,7 +3933,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 5,
             "Comment Body": "Why are we obscuring the stacktrace?  Better to just wrap the exception.",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 154852948,
@@ -3941,7 +3941,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 39,
             "Comment Body": "Pretty sure the assertion at the end of this method should not be needed, since you shouldn't be ignoring the IOException.  If you mean to assert that the IOException itself is impossible then throw the AssertionError from there wrapping the IOException.",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 154852948,
@@ -3949,7 +3949,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 41,
             "Comment Body": "List contains is O(N)... we should really be using a set contains here.  Also the unmodifiable is unnecessary if you're only retaining the object through the predicate",
-            "Comment Classification": ""
+            "Comment Classification": "Algorithmic Efficiency/Performance"
       },
       {
             "PR ID": 154852948,
@@ -3957,7 +3957,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 40,
             "Comment Body": "`Void` isn't `Serializable` why is it here?",
-            "Comment Classification": ""
+            "Comment Classification": "Element Type"
       },
       {
             "PR ID": 154852948,
@@ -3965,7 +3965,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 7,
             "Comment Body": "No point in renaming these methods since we're not retaining the originals.",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 154852948,
@@ -3973,7 +3973,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 8,
             "Comment Body": "`InvalidClassException` is a subclass of `IOException` - we can probably eliminate the extra catch block.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 154852948,
@@ -3981,7 +3981,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 9,
             "Comment Body": "We should be able to switch to try-with-resources and eliminate the `closeSilently(...)` method.  Can probably also eliminate the duplication between the `byte[]` and `ByteBuffer` variants while we're at it.",
-            "Comment Classification": ""
+            "Comment Classification": "Duplication"
       },
       {
             "PR ID": 154852948,
@@ -3989,7 +3989,7 @@
             "Comment Author": "chrisdennis",
             "Comment Order": 11,
             "Comment Body": "Should this be whitelisting?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 25576030,
@@ -3997,7 +3997,7 @@
             "Comment Author": "cljohnso",
             "Comment Order": 1,
             "Comment Body": "I'm going to demonstrate some ignorance here -- but is there some way to accomplish identifying an eviction candidate without doing entry selection twice? Could ConcurrentHashMap.getRandomValues be changed to always return at least one entry (or the \"normal\" sized collection of entries) to evict? (ConcurrentHashMap.getRandomValues appears to be used only when attempting to evict something.)\n",
-            "Comment Classification": ""
+            "Comment Classification": "Algorithmic Efficiency/Performance"
       },
       {
             "PR ID": 25576030,
@@ -4005,7 +4005,7 @@
             "Comment Author": "ljacomet",
             "Comment Order": 2,
             "Comment Body": "It would not make a difference. `getRandomValues` will try hard - go over the whole map content - to get the number of sampled entries requested. And return less only if none/not enough could be found.\nGiven that, the only reason we would end up calling it a second time is genuine and doing it from here or from the inside does not change the fact that it happens once we scan the entries a second time, with a different predicate.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Algorithmic Efficiency/Performance"
       },
       {
             "PR ID": 247744632,
@@ -4013,7 +4013,7 @@
             "Comment Author": "allisonbm92",
             "Comment Order": 4,
             "Comment Body": "What is the purpose of this?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 247744632,
@@ -4021,7 +4021,7 @@
             "Comment Author": "ashwinraghav",
             "Comment Order": 1,
             "Comment Body": "Nit: We could either have an equivalent getStart() or write this inline as well",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 247744632,
@@ -4029,7 +4029,7 @@
             "Comment Author": "ashwinraghav",
             "Comment Order": 2,
             "Comment Body": "It's not often you see graph traversal in a code review \ud83e\udd23 ",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 247744632,
@@ -4037,7 +4037,7 @@
             "Comment Author": "ashwinraghav",
             "Comment Order": 3,
             "Comment Body": "`.info` ?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 247744632,
@@ -4045,7 +4045,7 @@
             "Comment Author": "allisonbm92",
             "Comment Order": 7,
             "Comment Body": "Do these methods immediately upload the results? How do you handle errors uploading to Stackdriver?",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 176826652,
@@ -4053,7 +4053,7 @@
             "Comment Author": "pq",
             "Comment Order": 1,
             "Comment Body": "Not important probably but I find this description hard to follow... \r\n\r\n> \"valid Daemon response of event\" \r\n\r\n=> missing a word maybe?",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 176826652,
@@ -4061,7 +4061,7 @@
             "Comment Author": "pq",
             "Comment Order": 3,
             "Comment Body": "Maybe renaming `str` to `event` would help here?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 176826652,
@@ -4069,7 +4069,7 @@
             "Comment Author": "pq",
             "Comment Order": 4,
             "Comment Body": "Should the trim come first?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 176826652,
@@ -4077,7 +4077,7 @@
             "Comment Author": "jacob314",
             "Comment Order": 10,
             "Comment Body": "extra call to trim :)",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 176826652,
@@ -4085,7 +4085,7 @@
             "Comment Author": "pq",
             "Comment Order": 6,
             "Comment Body": "Also not important but something doesn't agree with me.\r\n\r\nMaybe:\r\n\r\nthis removes any single newline that occurs\r\n\r\nor \r\n\r\nthis removes any single newlines that occur\r\n\r\nor\r\n\r\nthis removes any single newline that occured",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 176826652,
@@ -4093,7 +4093,7 @@
             "Comment Author": "jacob314",
             "Comment Order": 8,
             "Comment Body": "why are these going from error to info log messages?",
-            "Comment Classification": ""
+            "Comment Classification": "Logging"
       },
       {
             "PR ID": 176826652,
@@ -4101,7 +4101,7 @@
             "Comment Author": "pq",
             "Comment Order": 7,
             "Comment Body": "FWIW: `StringUtil.notNullize(progressId);` is another cute/idiomatic way to do this.",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 176826652,
@@ -4109,7 +4109,7 @@
             "Comment Author": "jacob314",
             "Comment Order": 9,
             "Comment Body": "an you add a test case matching the new edge cases that are now handled correctly?",
-            "Comment Classification": ""
+            "Comment Classification": "Other Test related"
       },
       {
             "PR ID": 255512964,
@@ -4117,7 +4117,7 @@
             "Comment Author": "ketan",
             "Comment Order": 1,
             "Comment Body": "Would you not pass an executable to killproc? Am I missing something?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 255512964,
@@ -4125,7 +4125,7 @@
             "Comment Author": "marques-work",
             "Comment Order": 3,
             "Comment Body": "My vote would be to just explicitly invoke `stop-agent.sh` and remove `killproc()` altogether since it's now just a useless use of `eval`.\r\n\r\nSuggesting to change this line to:\r\n\r\n```\r\n>/dev/null /usr/share/${SERVICE_NAME}/stop-agent.sh ${SERVICE_NAME} service_mode\r\n```",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 115215016,
@@ -4133,7 +4133,7 @@
             "Comment Author": "garrettjonesgoogle",
             "Comment Order": 3,
             "Comment Body": "What impact does this have?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 115215016,
@@ -4141,7 +4141,7 @@
             "Comment Author": "shinfan",
             "Comment Order": 1,
             "Comment Body": "rename flex to gae?",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 115215016,
@@ -4149,7 +4149,7 @@
             "Comment Author": "shinfan",
             "Comment Order": 2,
             "Comment Body": "hex?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 115215016,
@@ -4157,7 +4157,7 @@
             "Comment Author": "garrettjonesgoogle",
             "Comment Order": 4,
             "Comment Body": "use a space after keywords (`if`, `for`)",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 174594459,
@@ -4165,7 +4165,7 @@
             "Comment Author": "bernd",
             "Comment Order": 1,
             "Comment Body": "Please add a text description to the `@JsonIgnore` annotation that includes the link to the issue:\r\n\r\nhttps://github.com/Graylog2/graylog2-server/issues/4459",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 174594459,
@@ -4173,7 +4173,7 @@
             "Comment Author": "joschi",
             "Comment Order": 3,
             "Comment Body": "The [`@Ignore`](http://junit.sourceforge.net/javadoc/org/junit/Ignore.html) annotation has an argument which can be used to display the reason while running the test.\r\nThis might be more useful than a code comment.",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 120398724,
@@ -4181,7 +4181,7 @@
             "Comment Author": "dapengzhang0",
             "Comment Order": 1,
             "Comment Body": "This is a burden for users. Why not just call `cancel(null)` in the implementation of `CancellableContext#detach()`?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 120398724,
@@ -4189,7 +4189,7 @@
             "Comment Author": "zpencer",
             "Comment Order": 2,
             "Comment Body": "Is it the case that \"endpoint\" here can refer to many hosts in the case of loadbalancing? Is it worth emphasizing that the many actual connections here need not be for the same destination?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 308710870,
@@ -4197,7 +4197,7 @@
             "Comment Author": "dapengzhang0",
             "Comment Order": 2,
             "Comment Body": "Let it explicitly call `usingBuilder()`.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 308710870,
@@ -4205,7 +4205,7 @@
             "Comment Author": "ejona86",
             "Comment Order": 1,
             "Comment Body": "I think we should say, 'The provided {@code builder} becomes \"owned\" by AndoidChannelBuilder. The caller should not modify the provided builder and AndroidChannelBuilder may modify it.'",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 415589365,
@@ -4213,7 +4213,7 @@
             "Comment Author": "ericgribkoff",
             "Comment Order": 1,
             "Comment Body": "A disadvantage of this API is that, by default, debugging issues involving more than `Context.Key` would become very difficult as they would all have the same name. I think we want to instead encourage the use of different identifiers when creating the keys.",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 415589365,
@@ -4221,7 +4221,7 @@
             "Comment Author": "ejona86",
             "Comment Order": 9,
             "Comment Body": "If you use a semicolon, then Multiple should be lower-case. It is probably better to put a period after the first part and have this capitalized.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 415589365,
@@ -4229,7 +4229,7 @@
             "Comment Author": "ericgribkoff",
             "Comment Order": 2,
             "Comment Body": "Rather than adding the parameter-less `#key()` API above, it might be more helpful to avoid confusion around whether the name of a key \"matters\" (as in https://github.com/grpc/grpc-java/issues/7024) if the Javadoc for `Context.Key` specifies here as well that `Key` values will only be compared using by reference equality, which otherwise is only specified on the `Context#key` creation methods. \r\n\r\n@ejona86 What do you think?",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 415589365,
@@ -4237,7 +4237,7 @@
             "Comment Author": "ejona86",
             "Comment Order": 7,
             "Comment Body": "Add a line between the description and the `@param`; we separate the `@` stuff from the description with a line to make it more readable.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 415589365,
@@ -4245,7 +4245,7 @@
             "Comment Author": "ejona86",
             "Comment Order": 8,
             "Comment Body": "\"a name intended for debugging\"",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 432135317,
@@ -4253,7 +4253,7 @@
             "Comment Author": "ZhenLian",
             "Comment Order": 4,
             "Comment Body": "@voidzcy Shall we keep the alphabetical order of this?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 432135317,
@@ -4261,7 +4261,7 @@
             "Comment Author": "voidzcy",
             "Comment Order": 1,
             "Comment Body": "Did you deleted the newline at the end of the file?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 432135317,
@@ -4269,7 +4269,7 @@
             "Comment Author": "voidzcy",
             "Comment Order": 3,
             "Comment Body": "2020",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 432135317,
@@ -4277,7 +4277,7 @@
             "Comment Author": "ZhenLian",
             "Comment Order": 10,
             "Comment Body": "nit: s/envoy/googleapis",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 432135317,
@@ -4285,7 +4285,7 @@
             "Comment Author": "voidzcy",
             "Comment Order": 2,
             "Comment Body": "New line at the end of the file.",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 10266801,
@@ -4293,7 +4293,7 @@
             "Comment Author": "mdogan",
             "Comment Order": 3,
             "Comment Body": "Can we move `signalOneBackupComplete()` method to a new internal interface? I think we need to hide this method. We don't want SPI developers to access/call `invocation.signalOneBackupComplete()`?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 10266801,
@@ -4301,7 +4301,7 @@
             "Comment Author": "mdogan",
             "Comment Order": 5,
             "Comment Body": "Yes, it's part of the call but not part of the public Invocation API. Invocation user should not mess with this method, it's an internal method, called only by invocation system.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Function Calls"
       },
       {
             "PR ID": 10266801,
@@ -4309,7 +4309,7 @@
             "Comment Author": "ahmetmircik",
             "Comment Order": 1,
             "Comment Body": "Why do we need to mark availableBackups as volatile since there is  a synchronized block?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 10266801,
@@ -4317,7 +4317,7 @@
             "Comment Author": "mdogan",
             "Comment Order": 7,
             "Comment Body": "what about executor here? can't we use `ExecutionService.getExecutor(ExecutionService.ASYNC_EXECUTOR)` by default?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 169916233,
@@ -4325,7 +4325,7 @@
             "Comment Author": "metanet",
             "Comment Order": 5,
             "Comment Body": "I guess we should also call `setValidateTarget(false)` here. Another thing is, what if the target partition is migrating?",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 169916233,
@@ -4333,7 +4333,7 @@
             "Comment Author": "mdogan",
             "Comment Order": 8,
             "Comment Body": "what's this `partitionId` for?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 169916233,
@@ -4341,7 +4341,7 @@
             "Comment Author": "mdogan",
             "Comment Order": 9,
             "Comment Body": "Why blocking is needed here? As far as I see, `callDisconnectionOperation(..)` is called from a scheduler thread.",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 169916233,
@@ -4349,7 +4349,7 @@
             "Comment Author": "mdogan",
             "Comment Order": 11,
             "Comment Body": "What's the reason of doing a local & blocking invocation on a generic thread?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 169916233,
@@ -4357,7 +4357,7 @@
             "Comment Author": "mdogan",
             "Comment Order": 1,
             "Comment Body": "Is there anything needed for 3.9 compat? ",
-            "Comment Classification": ""
+            "Comment Classification": "Compatibility Issues"
       },
       {
             "PR ID": 169916233,
@@ -4365,7 +4365,7 @@
             "Comment Author": "metanet",
             "Comment Order": 7,
             "Comment Body": "I think this approach can lead to deadlocks. Here, we are on a generic operation thread, we offload a task to an executor thread and wait for its result. However, in `com.hazelcast.transaction.impl.TransactionManagerServiceImpl#clientDisconnected()`, we make new invocations to rollback transactions, which will run on generic operation threads as well. When we have a sufficient number of client disconnections, we can occupy all op threads and fall into a deadlock...",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 169916233,
@@ -4373,7 +4373,7 @@
             "Comment Author": "ihsandemir",
             "Comment Order": 3,
             "Comment Body": "does this mean it was parallel before and we made it become serial now? will this delay authentication and client connect time?",
-            "Comment Classification": ""
+            "Comment Classification": "Algorithmic Efficiency/Performance"
       },
       {
             "PR ID": 44248964,
@@ -4381,7 +4381,7 @@
             "Comment Author": "Donnerbart",
             "Comment Order": 1,
             "Comment Body": "Am I stupid or should this be an `&&` instead of `||`? Prepare the commit if it's `TWO_PHASE` AND has more than one entry.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 44248964,
@@ -4389,7 +4389,7 @@
             "Comment Author": "gurbuzali",
             "Comment Order": 3,
             "Comment Body": "I believe it would be safer to check if `serviceName` is equal to one of the Collection services.\nIt is fine currently but what if we introduce another `TransactionalService`, say `ReplicatedMap` for example.\nDeveloper can easily miss to update this method.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Security Concerns"
       },
       {
             "PR ID": 44248964,
@@ -4397,7 +4397,7 @@
             "Comment Author": "gurbuzali",
             "Comment Order": 5,
             "Comment Body": "correct, `on by default` is better/safer.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Security Concerns"
       },
       {
             "PR ID": 44248964,
@@ -4405,7 +4405,7 @@
             "Comment Author": "gurbuzali",
             "Comment Order": 6,
             "Comment Body": "a question:\nwe were not throwing any exception while committing but we were logging.\nwith this we are changing that, how will it affect a user ?\n\n```\ntry {\n    do something\n    commit\n} catch(Exception) {\n    rollback\n}\n```\n\nWhat will happen for the above case ? user will get the exception and will try to rollback it, will it throw exception too ?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 45327931,
@@ -4413,7 +4413,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 4,
             "Comment Body": "Can you add a line of comment explaining that a nested call is happening here.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 45327931,
@@ -4421,7 +4421,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 3,
             "Comment Body": "being local or not is currently not the question.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 45327931,
@@ -4429,7 +4429,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 5,
             "Comment Body": "Can you add a line of comment that this is the first call (so not nested).\n",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 45327931,
@@ -4437,7 +4437,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 18,
             "Comment Body": "Only when you have received a not null runner, you know you are in a nested call.  \n\nSo this conclusion:\n\n```\n // if already running an operation for a partition (id >= 0) it means that it's a nested invocation\n        // in this case partitionId of both nested operations has to match\n```\n\nI'm not following.\n\nThe runner is set and unset on the outer call. So if there is no runner, it must be the outer call.. if there is a runner, there is already an outer call executing.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 45327931,
@@ -4445,7 +4445,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 17,
             "Comment Body": "I think we should. We should also update the documentation to clearly explain what this method is doing. \n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 45327931,
@@ -4453,7 +4453,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 8,
             "Comment Body": "Checkstyle doesn't like trailing comments; so we don't do them in our regular code. Personally I have no problem with it; perhaps we should make checkstyle lenient towards trailing comments.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 45327931,
@@ -4461,7 +4461,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 20,
             "Comment Body": "Perhaps we should update checkstyle. I have little problems with a trailing comment. Can you suggest it on the dev channel?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 45327931,
@@ -4469,7 +4469,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 9,
             "Comment Body": "Now it becomes a bit more difficult to understand the operation. From the name it isn't clear that it is a partition specific operation. So I understand you want to reduce duplication, but now the test is a lot more difficult to understand.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 45327931,
@@ -4477,7 +4477,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 22,
             "Comment Body": "For me it isn't clear because this DummySleepingNullReturningOperation doesn't explain the intent to me. \n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 45327931,
@@ -4485,7 +4485,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 23,
             "Comment Body": "Let me have a look at the whole source. Judging changes based on fragements sucks.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 45327931,
@@ -4493,7 +4493,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 27,
             "Comment Body": "The main purpose of the DummySleeping one is to not be bother with the actual result of the operation. I need to have an invocation and this is the way how to get one. \n\nSo perhaps name it to GetLostOperation :) Something that clearly explains the intent that we don't want to be bothered with the actual operation.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 45327931,
@@ -4501,7 +4501,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 33,
             "Comment Body": "The problem with DummyPartitionOperation/TestPartitionOperation names is that they all give the impression that they matter. In our case, the GetLostOperation is meant to create an invocation and to shoot the operation so much into the future (wait) that it won't bother the actual test. So I don't care about its results.. I just want to get access to an Invocation instance I can test.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 45327931,
@@ -4509,7 +4509,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 11,
             "Comment Body": "Does this field need to be final?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 45327931,
@@ -4517,7 +4517,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 28,
             "Comment Body": "Sure.. Again.. judging code based on fragments sucks\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 45327931,
@@ -4525,7 +4525,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 35,
             "Comment Body": "Can you add a few lines of comment explaining the intend of this operation?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 45327931,
@@ -4533,7 +4533,7 @@
             "Comment Author": "bilalyasar",
             "Comment Order": 1,
             "Comment Body": "just friendly advice :)\nin general, in hazelcast we use (expected = SomeExceptionClassName) pattern.\nYou can see an example here: https://github.com/hazelcast/hazelcast/blob/08857da91e497365437700243db026fda4c5c31a/hazelcast/src/test/java/com/hazelcast/config/QueryCacheConfigTest.java#L15\n",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 45327931,
@@ -4541,7 +4541,7 @@
             "Comment Author": "bilalyasar",
             "Comment Order": 12,
             "Comment Body": "yes you are right, it is not obligation as you said :+1: \n",
-            "Comment Classification": ""
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 45327931,
@@ -4549,7 +4549,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 30,
             "Comment Body": "I think this is a relatively new unit feature. I recently discovered it while reading \n\nhttps://pragprog.com/book/utj2/pragmatic-unit-testing-in-java-8-with-junit\n",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 45327931,
@@ -4557,7 +4557,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 15,
             "Comment Body": "I would not test for the message. \n",
-            "Comment Classification": ""
+            "Comment Classification": "Other Test related"
       },
       {
             "PR ID": 45327931,
@@ -4565,7 +4565,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 16,
             "Comment Body": "Maybe it is an idea to split up this test into 2 files: one testing partition specific outer call.. and the other testing non partition specific outer call. Otherwise you get such long names.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 53722387,
@@ -4573,7 +4573,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 44,
             "Comment Body": "Could you add some javadoc to this interface for future generations?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 53722387,
@@ -4581,7 +4581,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 25,
             "Comment Body": "Can you add a few lines of Javadoc what the purpose of this class is?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 53722387,
@@ -4589,7 +4589,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 24,
             "Comment Body": "Not easier to call this INSTANCE?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 53722387,
@@ -4597,7 +4597,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 30,
             "Comment Body": "Why is this field static since HazelcastClientManager already is a singleton. Using the singleton I can access the clients map anway;\n\n```\nHazelcastClientManager.INSTANCE.clients\n```\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 53722387,
@@ -4605,7 +4605,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 28,
             "Comment Body": "Do we want to make the constructor private? Since this class also acts like a Singleton; we probably want to prevent having multiple instances.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 53722387,
@@ -4613,7 +4613,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 31,
             "Comment Body": "Could it be that we get some racy behavior since the check/modify is not atomic? \n",
-            "Comment Classification": ""
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 53722387,
@@ -4621,7 +4621,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 35,
             "Comment Body": "Do you know how often this is send over the wire?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 53722387,
@@ -4629,7 +4629,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 42,
             "Comment Body": "But this just happens a few times; right?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 53722387,
@@ -4637,7 +4637,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 43,
             "Comment Body": "After talking with @toktarev it is fine to be serializable.  Values won't be send very often.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 53722387,
@@ -4645,7 +4645,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 45,
             "Comment Body": "Could you add some javadoc to the class? \n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 53722387,
@@ -4653,7 +4653,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 46,
             "Comment Body": "Could you allign this with the HazelcastClientManager so that either all methods are static, or a singleton is used and the methods are not static? Now we have 1 class with static methods, and another with instance methods. \n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 53722387,
@@ -4661,7 +4661,7 @@
             "Comment Author": "pveentjer",
             "Comment Order": 47,
             "Comment Body": "Can you add some comments that this method needs to be protected for outside projects? Else someone could make it private\n",
-            "Comment Classification": ""
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 818551608,
@@ -4669,7 +4669,7 @@
             "Comment Author": "ivanthescientist",
             "Comment Order": 4,
             "Comment Body": "Think the `new int[]{2}` bit needs a comment with explanation. Or better yet a constant. ",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 818551608,
@@ -4677,7 +4677,7 @@
             "Comment Author": "ivanthescientist",
             "Comment Order": 5,
             "Comment Body": "Any reason this has to be an array? Just checking. ",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 818551608,
@@ -4685,7 +4685,7 @@
             "Comment Author": "viliam-durina",
             "Comment Order": 3,
             "Comment Body": "I'd say we should remove this whole method. We can't do it correctly, so why bother... The query parsing here is frightening...",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 818551608,
@@ -4693,7 +4693,7 @@
             "Comment Author": "viliam-durina",
             "Comment Order": 2,
             "Comment Body": "This is likely to fail intermittently if there's some hiccup. We could add a method that will ignore unexpected rows.",
-            "Comment Classification": ""
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 449718026,
@@ -4701,7 +4701,7 @@
             "Comment Author": "NathanQingyangXu",
             "Comment Order": 2,
             "Comment Body": "It is a pattern to get rid of space char uses previously advised. Is that a new format pattern to advocate then?",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 449718026,
@@ -4709,7 +4709,7 @@
             "Comment Author": "Sanne",
             "Comment Order": 7,
             "Comment Body": "This looks a bit puzzling. Do you know why it was limited to \"merge\" fetch profiles? \r\n\r\nNow you're expanding the set of operations to all, but the test just wants the load. I see we only use this for \"merge\" and \"refresh\" BTW... I suppose there's not  something special about \"refresh\" that we need to take into account during this load opertion?",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 449718026,
@@ -4717,7 +4717,7 @@
             "Comment Author": "NathanQingyangXu",
             "Comment Order": 1,
             "Comment Body": "It might be considerable approach to put `enhancementAsProxyEnabled` to left of `&&` for its performance cost is lower and we might end up with performance gain due to short-circuiting.",
-            "Comment Classification": ""
+            "Comment Classification": "Algorithmic Efficiency/Performance"
       },
       {
             "PR ID": 449718026,
@@ -4725,7 +4725,7 @@
             "Comment Author": "Sanne",
             "Comment Order": 5,
             "Comment Body": "Looks like the body of the test is exactly the same in both subclasses. Could be moved to the parent class to make this more clear?",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 586099109,
@@ -4733,7 +4733,7 @@
             "Comment Author": "Siedlerchr",
             "Comment Order": 1,
             "Comment Body": "```suggestion\r\n        when(autoCompletePreferences.getCompleteFields()).thenReturn(Set.of(StandardField.AUTHOR));\r\n```\r\nshould be sufficient, because Set.of already returns a Set",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 586099109,
@@ -4741,7 +4741,7 @@
             "Comment Author": "calixtus",
             "Comment Order": 2,
             "Comment Body": "`new BibEntry().withField()`",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 63851500,
@@ -4749,7 +4749,7 @@
             "Comment Author": "stefan-kolb",
             "Comment Order": 1,
             "Comment Body": "Indentation\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 63851500,
@@ -4757,7 +4757,7 @@
             "Comment Author": "tobiasdiez",
             "Comment Order": 15,
             "Comment Body": "The local variable is actually not needed, just return the appropriate value at the right place.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 63851500,
@@ -4765,7 +4765,7 @@
             "Comment Author": "tobiasdiez",
             "Comment Order": 12,
             "Comment Body": "I would invert some if statements and return an empty optional, so that you do not have 4 nested ones.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 63851500,
@@ -4773,7 +4773,7 @@
             "Comment Author": "tobiasdiez",
             "Comment Order": 14,
             "Comment Body": "What is `firstResult`?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 63851500,
@@ -4781,7 +4781,7 @@
             "Comment Author": "tobiasdiez",
             "Comment Order": 17,
             "Comment Body": "Ah ok. Then I would suggest a rename of the variable.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions "
       },
       {
             "PR ID": 63851500,
@@ -4789,7 +4789,7 @@
             "Comment Author": "stefan-kolb",
             "Comment Order": 3,
             "Comment Body": "We don't need assert.fail() here, do we?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 63851500,
@@ -4797,7 +4797,7 @@
             "Comment Author": "stefan-kolb",
             "Comment Order": 4,
             "Comment Body": "Is the CI unreliable for IEEE? Only include this if we get problems with the test on CI.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Other Test related"
       },
       {
             "PR ID": 63851500,
@@ -4805,7 +4805,7 @@
             "Comment Author": "stefan-kolb",
             "Comment Order": 6,
             "Comment Body": "Doesn't matter for the test what kind of paper it is, just keep the code clean.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 63851500,
@@ -4813,7 +4813,7 @@
             "Comment Author": "stefan-kolb",
             "Comment Order": 5,
             "Comment Body": "Same as above.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 63851500,
@@ -4821,7 +4821,7 @@
             "Comment Author": "stefan-kolb",
             "Comment Order": 7,
             "Comment Body": "Unnecessary comment for the test.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 72402427,
@@ -4829,7 +4829,7 @@
             "Comment Author": "stefan-kolb",
             "Comment Order": 5,
             "Comment Body": "\"Support separated names with colons\" or something alike?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 72402427,
@@ -4837,7 +4837,7 @@
             "Comment Author": "tobiasdiez",
             "Comment Order": 22,
             "Comment Body": "Probably some merge problem.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 72402427,
@@ -4845,7 +4845,7 @@
             "Comment Author": "oscargus",
             "Comment Order": 23,
             "Comment Body": "Union merge problems...\n",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 72402427,
@@ -4853,7 +4853,7 @@
             "Comment Author": "boceckts",
             "Comment Order": 30,
             "Comment Body": "Seems like a merge conflict to me.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 72402427,
@@ -4861,7 +4861,7 @@
             "Comment Author": "stefan-kolb",
             "Comment Order": 1,
             "Comment Body": "Please remove this comment. It's not relevant that this solved some issue.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 72402427,
@@ -4869,7 +4869,7 @@
             "Comment Author": "koppor",
             "Comment Order": 9,
             "Comment Body": "Sourround the new block with\n\n```\nif (!value.containts(\" and \")) {\n```\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 72402427,
@@ -4877,7 +4877,7 @@
             "Comment Author": "tobiasdiez",
             "Comment Order": 10,
             "Comment Body": "test also `{` as well as `;`\n",
-            "Comment Classification": ""
+            "Comment Classification": "Input Validation"
       },
       {
             "PR ID": 72402427,
@@ -4885,7 +4885,7 @@
             "Comment Author": "Siedlerchr",
             "Comment Order": 11,
             "Comment Body": "For checking for  Curly Braces there is a String Util Method which also has\na Unit Test. Maybe you can reuse that.\n\n2016-06-03 14:13 GMT+02:00 Tobias Diez notifications@github.com:\n\n> In\n> src/main/java/net/sf/jabref/logic/formatter/bibtexfields/NormalizeNamesFormatter.java\n> https://github.com/JabRef/jabref/pull/1470#discussion_r65697196:\n> \n> > @@ -36,6 +36,25 @@ public String getKey() {\n> > \n> > ```\n> >  @Override\n> >  public String format(String value) {\n> > ```\n> > -        // Handle case names in order lastname, firstname and separated by \",\"\n> \n> test also { as well as ;\n> \n> \u2014\n> You are receiving this because you are subscribed to this thread.\n> Reply to this email directly, view it on GitHub\n> https://github.com/JabRef/jabref/pull/1470/files/efdced6ec231b82f0f8e82a32a57a2f0fb454fb7#r65697196,\n> or mute the thread\n> https://github.com/notifications/unsubscribe/AATi5PDxbzRee0GVpU2oQWEe35bpUgUMks5qIBpNgaJpZM4Is5D7\n> .\n",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 72402427,
@@ -4893,7 +4893,7 @@
             "Comment Author": "Siedlerchr",
             "Comment Order": 31,
             "Comment Body": "I recently ran into the same issue (after a user noted it) in the office xml export, make sure to check for and case independent : `nameList.toUpperCase(Locale.ENGLISH).contains(\" AND \"))`\n\nAnd I would suggest adding a test for it, to make sure the behaviour stays the same in future ;)\n",
-            "Comment Classification": ""
+            "Comment Classification": "Other Test related"
       },
       {
             "PR ID": 72402427,
@@ -4901,7 +4901,7 @@
             "Comment Author": "stefan-kolb",
             "Comment Order": 2,
             "Comment Body": "Why is there a else branch if it does nothing?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 72402427,
@@ -4909,7 +4909,7 @@
             "Comment Author": "boceckts",
             "Comment Order": 26,
             "Comment Body": "Please add a java doc comment and describe what this formatter does.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 72402427,
@@ -4917,7 +4917,7 @@
             "Comment Author": "koppor",
             "Comment Order": 13,
             "Comment Body": "Is \"von\", \"zu\", \"van\" also covered by test cases? My feeling is that the code might treat them wrong.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Test Cases"
       },
       {
             "PR ID": 72402427,
@@ -4925,7 +4925,7 @@
             "Comment Author": "koppor",
             "Comment Order": 19,
             "Comment Body": "Why isn't this called \"affixesInLowerCase\"? - Why is \"von\", \"zu\", \"van\" and \"der\" an affix? I think, only jr, sr, jnr, and snr are affixes. - As far as I can guess, \"van\" are not affixes\n\nWhen reading https://en.wikipedia.org/wiki/Suffix_(name), it seems that jr is a name suffix, isn't it?\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 72402427,
@@ -4933,7 +4933,7 @@
             "Comment Author": "Siedlerchr",
             "Comment Order": 32,
             "Comment Body": "Make it a list with Arrays.asList(..split() ) \n",
-            "Comment Classification": ""
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 72402427,
@@ -4941,7 +4941,7 @@
             "Comment Author": "tobiasdiez",
             "Comment Order": 21,
             "Comment Body": "Can you please move all this code to `AuthorList.parse`. Thanks. Also split it into smaller methods, which are easier to understand and maintain. \n",
-            "Comment Classification": ""
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 72402427,
@@ -4949,7 +4949,7 @@
             "Comment Author": "koppor",
             "Comment Order": 18,
             "Comment Body": "Space after `for` is missing\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 72402427,
@@ -4957,7 +4957,7 @@
             "Comment Author": "oscargus",
             "Comment Order": 24,
             "Comment Body": "Does it really make sense to use this in `AuthorList`? Isn't `NormalizeNameFormatter` quite a bit about guessing? I'd prefer if `AuthorList` didn't guess.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Feature Completeness"
       },
       {
             "PR ID": 72402427,
@@ -4965,7 +4965,7 @@
             "Comment Author": "Siedlerchr",
             "Comment Order": 33,
             "Comment Body": "When you have list you can do a fancy one liner `originalStrings.replaceAll(String::trim);`\nhttps://docs.oracle.com/javase/8/docs/api/java/util/List.html#replaceAll-java.util.function.UnaryOperator-\n",
-            "Comment Classification": ""
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 72402427,
@@ -4973,7 +4973,7 @@
             "Comment Author": "boceckts",
             "Comment Order": 29,
             "Comment Body": "If you only need each value in a collection, please use a foreach loop as this is more readable in my opinion.\ne.g.:\n\n```\nfor (String name : allNames) {\n    name = name.trim();\n}\n```\n",
-            "Comment Classification": ""
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 72402427,
@@ -4981,7 +4981,7 @@
             "Comment Author": "boceckts",
             "Comment Order": 28,
             "Comment Body": "Please use more appropriate variable names than `value` or `valueParts` since it makes the code really hard to read.\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 72402427,
@@ -4989,7 +4989,7 @@
             "Comment Author": "koppor",
             "Comment Order": 17,
             "Comment Body": "The variable is now called \"valuePartsCount\".\n\"valuePartsCount holds the count of name parts without the avoided terms\"\n",
-            "Comment Classification": ""
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 72402427,
@@ -4997,7 +4997,7 @@
             "Comment Author": "koppor",
             "Comment Order": 16,
             "Comment Body": "\"Holds the index of each term which needs to be avoided\"\n",
-            "Comment Classification": ""
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 72402427,
