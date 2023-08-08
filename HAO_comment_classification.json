@@ -93,7 +93,7 @@
             "Comment Author": "arina-ielchiieva",
             "Comment Order": 9,
             "Comment Body": "1. Remove public: `public interface SingleRowSet extends RowSet {`\r\n2. Please try to fix all java doc errors.",
-            "Comment Classification": "Visibility"
+            "Comment Classification": "Visibility, Documentation"
       },
       {
             "PR ID": 307712212,
@@ -317,7 +317,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 31,
             "Comment Body": "Just call it `Aggregations`?",
-            "Comment Classification": "Naming Conventions"
+            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
       },
       {
             "PR ID": 233601182,
@@ -389,7 +389,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 17,
             "Comment Body": "All final variable term in this class must not be created with `newName` they can be constant.",
-            "Comment Classification": "Code Style & Formattinge"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 233601182,
@@ -485,7 +485,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 18,
             "Comment Body": "Can you add comments to this method or break the logic into more variables in the method. It is very difficult to understand the Scala magic here. You call the method `extractAggregatesAndExpressions` but what do the expression that come out of this method describe? Also you use too generic `aggs` and `agg` variables name with different data types and meaning.",
-            "Comment Classification": "Naming Conventions"
+            "Comment Classification": "Naming Conventions, Code Complexity"
       },
       {
             "PR ID": 233601182,
@@ -885,7 +885,7 @@
             "Comment Author": "suvodeep-pyne",
             "Comment Order": 16,
             "Comment Body": "One suggestion is to actually nail down the config file instead of generifying it. The user can store in whatever format he wants and its his responsibility to feed in the information as a config which can be a simple properties object or even a hadoop config. This config can be used to execute the test harness. If the Config is an unqualified generic then, how do we plan to read the config in the framework ?\n",
-            "Comment Classification": "Function Parameters"
+            "Comment Classification": "Function Parameters, Knowledge Transfer, Code Complexity"
       },
       {
             "PR ID": 36767246,
@@ -917,7 +917,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 22,
             "Comment Body": "nit: Shouldn't this be outside the loop?\n",
-            "Comment Classification": "Logic Error"
+            "Comment Classification": "Logic Error, Wrong Location "
       },
       {
             "PR ID": 37074507,
@@ -933,7 +933,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 7,
             "Comment Body": "Is it possible for `getBytes` to return a `null`? BTW: need one space before `=`.\n",
-            "Comment Classification": "Code Style & Formatting"
+            "Comment Classification": "Code Style & Formatting, Unvalidated Element"
       },
       {
             "PR ID": 37074507,
@@ -1269,7 +1269,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 40,
             "Comment Body": "```suggestion\r\n3. Please add documentation and tests to explain/cover your changes.\r\n```",
-            "Comment Classification": "Documentation"
+            "Comment Classification": "Documentation, Test Coverage"
       },
       {
             "PR ID": 246539821,
@@ -1389,7 +1389,7 @@
             "Comment Author": "jlahoda",
             "Comment Order": 1,
             "Comment Body": "Please no access to javac internal types (com.sun.tools.**) in hint implementations. Maybe initTypeMirror = org.netbeans.modules.java.hints.errors.Utilities.resolveCapturedType(initTypeMirror) + just he isSameType check would work? (Possibly check that initTypeMirror is not an erroneous type before, not sure.)",
-            "Comment Classification": "Using standard methods"
+            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
       },
       {
             "PR ID": 185369888,
@@ -1397,7 +1397,7 @@
             "Comment Author": "sdedic",
             "Comment Order": 5,
             "Comment Body": "can be this part of condition part of the `anyMatch` clause ?",
-            "Comment Classification": "Code Complexity"
+            "Comment Classification": "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
       },
       {
             "PR ID": 185369888,
