@@ -5,7 +5,7 @@
             "Comment Author": "arina-ielchiieva",
             "Comment Order": 4,
             "Comment Body": "1. Remove `protected SchemaChangeCallBack callBack = new SchemaChangeCallBack();`\r\n2. Better error message: `public long size() {\r\n    throw new UnsupportedOperationException(\"getSize\");\r\n  }`",
-            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 307712212,
@@ -13,7 +13,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 31,
             "Comment Body": "extensible",
-            "Comment Classification": "Code Complexity: omments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 307712212,
@@ -21,7 +21,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 32,
             "Comment Body": "Why change formatting? Drill has long used single-line methods for conciseness. Is this an artifact of some code formatter? I didn't see discussion on the dev list about changing our coding standards...",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 307712212,
@@ -29,7 +29,7 @@
             "Comment Author": "arina-ielchiieva",
             "Comment Order": 5,
             "Comment Body": "Constructors can be protected.",
-            "Comment Classification": "Visibility: Code element has the wrong scope, i.e., public element should be private"
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 307712212,
@@ -37,7 +37,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 33,
             "Comment Body": "Why remove nested classes? These are perfectly normal part of Java that allows small, single-purpose classes to be associated with the one and only class that uses them. Again, if we want to change the Drill style guidelines, let's have the discussion on dev list first.",
-            "Comment Classification": "Moving Functionality: Comments that suggest moving a function, part of a function, a module, or a class to a different part of the code, grouping related code, moving statements"
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 307712212,
@@ -45,7 +45,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 34,
             "Comment Body": "See note above.",
-            "Comment Classification": "Knowledge Transfer: Comments that explain concepts or link to additional resources to help to transfer knowledge."
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 307712212,
@@ -53,7 +53,7 @@
             "Comment Author": "arina-ielchiieva",
             "Comment Order": 6,
             "Comment Body": "`public RowSetWriter writer() {\r\n    return writer(10);\r\n  }`\r\n\r\nCreate a constant instead with Java-doc.",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 307712212,
@@ -61,7 +61,7 @@
             "Comment Author": "arina-ielchiieva",
             "Comment Order": 7,
             "Comment Body": "Should be immutable?",
-            "Comment Classification": "Security Concerns: Input Sanitisation, Data Encryption, Input sanitization, Authorization, Authentication, Other Security Issues"
+            "Comment Classification": "Security Concerns"
       },
       {
             "PR ID": 307712212,
@@ -69,7 +69,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 35,
             "Comment Body": "See note above about removal of nested class.",
-            "Comment Classification": "Knowledge Transfer: Comments that explain concepts or link to additional resources to help to transfer knowledge."
+            "Comment Classification": "Knowledge Transfer"
       },
       {
             "PR ID": 307712212,
@@ -77,7 +77,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 36,
             "Comment Body": "See note above about cluttering the project with many small classes used in only one location.",
-            "Comment Classification": "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 307712212,
@@ -85,7 +85,7 @@
             "Comment Author": "arina-ielchiieva",
             "Comment Order": 8,
             "Comment Body": "Replace usage of `Sets.<Integer>newHashSet()`",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 307712212,
@@ -93,7 +93,7 @@
             "Comment Author": "arina-ielchiieva",
             "Comment Order": 9,
             "Comment Body": "1. Remove public: `public interface SingleRowSet extends RowSet {`\r\n2. Please try to fix all java doc errors.",
-            "Comment Classification": "Visibility: Code element has the wrong scope, i.e., public element should be private. Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 307712212,
@@ -101,7 +101,7 @@
             "Comment Author": "arina-ielchiieva",
             "Comment Order": 3,
             "Comment Body": "Please rename method: `void setPosn(int index);`",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 307712212,
@@ -109,7 +109,7 @@
             "Comment Author": "arina-ielchiieva",
             "Comment Order": 1,
             "Comment Body": "New line.",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 307712212,
@@ -117,7 +117,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 38,
             "Comment Body": "Won't work. Must be an array. The idea is that addRow() takes an array of columns. But, if the row has a single column, and that one column is repeated, the Java code is ambiguous. The original (correct) implementation handles this case.",
-            "Comment Classification": "Logic Error: Comments that indicate an error in the logic of the code."
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 307712212,
@@ -125,7 +125,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 39,
             "Comment Body": "The SV is not writable within a RowSet. Changing the SV will mess up indexing.\r\n\r\nThe way to use that is to have a DirectRowSet on the original batch. Create the SV. Then, use the DirectRowSet and the SV to create an indirect row set.",
-            "Comment Classification": "Logic Error: Comments that indicate an error in the logic of the code."
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 307712212,
@@ -133,7 +133,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 41,
             "Comment Body": "WriterEvents is meant to be entirely internal; it should not be part of the API. WriterEvents is the internal implementation of the public API described here.",
-            "Comment Classification": "Visibility: Code element has the wrong scope, i.e., public element should be private"
+            "Comment Classification": "Visibility"
       },
       {
             "PR ID": 307712212,
@@ -141,7 +141,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 40,
             "Comment Body": "See general comment. Please do not combine the RowSet and ResultSetLoader classes into a single package: they present very different models used for different purposes.\r\n\r\nYes, it is confusing because there is no ResultSetReader at present, but there should be to handle schema changes, etc. across batches. RowSet handles only a single row set such as in tests. It was deliberately designed to NOT be ResultSetReader solution.",
-            "Comment Classification": "Moving Functionality: Comments that suggest moving a function, part of a function, a module, or a class to a different part of the code, grouping related code, moving statements"
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 307712212,
@@ -149,7 +149,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 62,
             "Comment Body": "Another change you might consider is renaming either this, or the other `SchemaBuilder`. Since this is the one we want to use moving forward, maybe rename the other to `BatchSchemaBuilder` so that future folks don't have to figure out the correct import when the reference the class.",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 307712212,
@@ -157,7 +157,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 60,
             "Comment Body": "Simpler: `addNullable(\"eventDate\", MinorType.TIMESTAMP)`\r\n\r\nImport `MinorType`, use the `addNullable` method rather than the more verbose form of using the `DataMode`. That is, express intent, not implementation.",
-            "Comment Classification": "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 307712212,
@@ -165,7 +165,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 42,
             "Comment Body": "Please either leave this, or move it to a utility class. This turns out to be a very handy way to validate or debug a unit test: add a call while working on the test to visualize the results, remove the call when done.",
-            "Comment Classification": "Moving Functionality: Comments that suggest moving a function, part of a function, a module, or a class to a different part of the code, grouping related code, moving statements"
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 307712212,
@@ -173,7 +173,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 63,
             "Comment Body": "As long as you are touching this code, please remove the do-nothing initializers:\r\n\r\n```\r\nprivate int recordCount;\r\nprivate int batchCount;\r\nprivate QueryId queryId;\r\n```",
-            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 307712212,
@@ -181,7 +181,7 @@
             "Comment Author": "paul-rogers",
             "Comment Order": 61,
             "Comment Body": "This is *not* a simplification; it exposes too much detail. Better:\r\n\r\n```\r\nRowSetFormatter.print(rowSet);\r\n```\r\n\r\nOf course, if we go this route, we might as well leave the `print()` method in `RowSet` and have it call the above code.\r\n\r\nJust to be clear, the purpose of `print()` is to help us developers visualize what's going on in Drill; it is not for production use. This is important because, if you can't visualize a batch, you'll make many mistakes because you can't tell what's what.",
-            "Comment Classification": "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 233061666,
@@ -189,7 +189,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 24,
             "Comment Body": "disactivated -> deactivated",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233061666,
@@ -197,7 +197,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 25,
             "Comment Body": "disactivated -> deactivated",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233061666,
@@ -205,7 +205,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 13,
             "Comment Body": "I think in this secion we should also say something about activating/deactivating this feature for existing jobs. Maybe this comment also applies to the other TTL strategies and the answer is the same for all currently.",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 233061666,
@@ -213,7 +213,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 26,
             "Comment Body": "disactivated -> deactivated",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233061666,
@@ -221,7 +221,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 12,
             "Comment Body": "Can we say something about how much it will slow compation down and why?",
-            "Comment Classification": "Understanding: Comments that ask questions about the code to further their understanding."
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 233061666,
@@ -229,7 +229,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 10,
             "Comment Body": "Seems to me like this is never `null`",
-            "Comment Classification": "Unvalidated Element: Comments that indicate that a variable or function return value isn’t checked before usage"
+            "Comment Classification": "Unvalidated Element"
       },
       {
             "PR ID": 233061666,
@@ -237,7 +237,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 20,
             "Comment Body": "Hmm, a bit off-topic but if we already need to create CFO per state, maybe it would be nice for user if this was a function `state name -> CFO` so that they can have their factory produce different setting in the CFO by state.",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 233061666,
@@ -245,7 +245,7 @@
             "Comment Author": "Aitozi",
             "Comment Order": 3,
             "Comment Body": "what is the order of these `close` should follow ?  `columnFamily` -> `columnOptions` -> `db` -> `dbOptions` -> `writeOptions` -> `filter` ?    Can this be put in a single function avoiding missing ~?  ",
-            "Comment Classification": "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 233061666,
@@ -253,7 +253,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 15,
             "Comment Body": "Why are we doing the close here and not combined with the first iteration over `kvStateInformation.values()` to close the column families? Maybe you could rewrite to a `disposeRocksDbKvStateInfo(...)`",
-            "Comment Classification": "Moving Functionality: Comments that suggest moving a function, part of a function, a module, or a class to a different part of the code, grouping related code, moving statements"
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 233061666,
@@ -261,7 +261,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 18,
             "Comment Body": "Maybe if we make the `FlinkCompactionFilterFactory` part of `RocksDbKvStateInfo`, this can be simplfied and `RocksDbKvStateInfo` can become `Closeable`",
-            "Comment Classification": "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 233061666,
@@ -269,7 +269,7 @@
             "Comment Author": "Aitozi",
             "Comment Order": 4,
             "Comment Body": "How about `createStateInfo` -> `restoreStateInfo` to be more explicit ?",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233061666,
@@ -277,7 +277,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 14,
             "Comment Body": "I think it should not be required to have those two methods with essentially duplicate code, e.g. you can do `RegisteredStateMetaInfoBase.fromMetaInfoSnapshot(restoredMetaInfo);` and call `createStateInfo(RegisteredStateMetaInfoBase metaInfoBase)`",
-            "Comment Classification": "Duplication: Comments that suggest removing duplication or semantic duplication"
+            "Comment Classification": "Duplication"
       },
       {
             "PR ID": 233061666,
@@ -285,7 +285,7 @@
             "Comment Author": "Aitozi",
             "Comment Order": 2,
             "Comment Body": "unused change ?",
-            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 233061666,
@@ -293,7 +293,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 19,
             "Comment Body": "Wrong whitespaces",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 233061666,
@@ -301,7 +301,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 11,
             "Comment Body": "I think this is a very useful refactoring. However, it has nothing to do with TTL state directly and should go into a separate commit.",
-            "Comment Classification": "Moving Functionality: Comments that suggest moving a function, part of a function, a module, or a class to a different part of the code, grouping related code, moving statements"
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 233061666,
@@ -309,7 +309,7 @@
             "Comment Author": "StefanRRichter",
             "Comment Order": 17,
             "Comment Body": "I wonder if it is good to ahve this new map or why we not make `FlinkCompactionFilterFactory` part of the `RocksDbKvStateInfo` in `LinkedHashMap<String, RocksDbKvStateInfo> kvStateInformation`? It seems like this is introducing a data duplication because a similar mapping already exists. All remaining functionality of this class could still mostly remain the same. On the other hand, this keeps TTL separated from the general state info. Now the question is should it be separated or rather be a part of it. Just would like to hear your thoughts why this alternative was chosen.",
-            "Comment Classification": "Duplication: Comments that suggest removing duplication or semantic duplication"
+            "Comment Classification": "Duplication"
       },
       {
             "PR ID": 233601182,
@@ -317,7 +317,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 31,
             "Comment Body": "Just call it `Aggregations`?",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -325,7 +325,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 32,
             "Comment Body": "Rephrase:\r\n```\r\nAggregations can be used in `DEFINE` and `MEASURES` clauses. Both [built-in]({{ site.baseurl }}/dev/table/sql.html#built-in-functions) and custom [user defined]({{ site.baseurl }}/dev/table/udfs.html) functions are supported.\r\n```",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 233601182,
@@ -333,7 +333,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 33,
             "Comment Body": "`to each subset`\r\n`In order to understand how those subsets are evaluated, `",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 233601182,
@@ -341,7 +341,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 35,
             "Comment Body": "Introduce a subsection `Example` as done in other sections?\r\nRephrase: `The task of the following example is to find... threshold. It shows how...`",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 233601182,
@@ -349,7 +349,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 36,
             "Comment Body": "```\r\nThe query will accumulate events as part of pattern variable `A` as long as the average price of those events does not exceed `15`. For example, such a limit exceeding happens at `01-Apr-11 10:00:04`. The following period exceeds the average price of `15` again at `01-Apr-11 10:00:10`.\r\n```",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 233601182,
@@ -357,7 +357,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 34,
             "Comment Body": "Mention that you can not mix pattern variables. Mention that you can use expressions as parameters?",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 233601182,
@@ -365,7 +365,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 37,
             "Comment Body": "```\r\nAn important thing to have in mind is how aggregates behave in situation when no rows were mapped to a certain pattern variable. Every aggregate (except for `COUNT`) will produce `null` in those cases. `COUNT` on the other hand will produce 0.\r\n```",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 233601182,
@@ -373,7 +373,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 65,
             "Comment Body": "@dawidwys what is `MR` actually doing? Do we have to call `SELECT MR.start_tstamp`?",
-            "Comment Classification": "Understanding: Comments that ask questions about the code to further their understanding."
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 233601182,
@@ -381,7 +381,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 64,
             "Comment Body": "Can you open a follow up issue for this if it does not exist yet?",
-            "Comment Classification": "Misc: Comments talking about things like Git Workflow, Project Management, or anything else not stated in other categories"
+            "Comment Classification": "Misc"
       },
       {
             "PR ID": 233601182,
@@ -389,7 +389,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 17,
             "Comment Body": "All final variable term in this class must not be created with `newName` they can be constant.",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formattinge"
       },
       {
             "PR ID": 233601182,
@@ -397,7 +397,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 46,
             "Comment Body": "code format",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 233601182,
@@ -405,7 +405,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 24,
             "Comment Body": "Call this variable `isWithinAggExprState` or similar?",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -413,7 +413,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 27,
             "Comment Body": "this comment has nothing to do with input access",
-            "Comment Classification": "Inline Comments: Comments that suggest that inline comments are missing or incorrect"
+            "Comment Classification": "Inline Comments"
       },
       {
             "PR ID": 233601182,
@@ -421,7 +421,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 22,
             "Comment Body": "This looks hacky to me. Why do we add the string representation of a rex call to input expressions? It could lead to wrong results if the string representation looks the same.",
-            "Comment Classification": "Logic Error: Comments that indicate an error in the logic of the code"
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 233601182,
@@ -429,7 +429,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 23,
             "Comment Body": "Give the parameter of this method a better name. Because you assume an aggregate function call in this method.",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -437,7 +437,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 57,
             "Comment Body": "Awesome documentation. Very helpful.",
-            "Comment Classification": "Social Communication: Comments that are not talking about code but are just social communication"
+            "Comment Classification": "Social Communication"
       },
       {
             "PR ID": 233601182,
@@ -445,7 +445,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 21,
             "Comment Body": "Flags -> Flag",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -453,7 +453,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 28,
             "Comment Body": "You are creating a primitive value for a boxed type term?",
-            "Comment Classification": "Element Type: Comments that indicate that a code element is of the wrong type"
+            "Comment Classification": "Element Type"
       },
       {
             "PR ID": 233601182,
@@ -461,7 +461,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 29,
             "Comment Body": "Something is wrong here. You are casting a `Row` into the result type of the aggregation?",
-            "Comment Classification": "Logic Error: Comments that indicate an error in the logic of the code"
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 233601182,
@@ -469,7 +469,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 30,
             "Comment Body": "Unnecessary variable.",
-            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 233601182,
@@ -477,7 +477,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 58,
             "Comment Body": "The naming is still not perfect here. What is the difference between `generateAggAccess` and `doGenerateAggAccess`? How about `generateDeduplicatedAggAccess` and `generateAggAccess`?  ",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -485,7 +485,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 18,
             "Comment Body": "Can you add comments to this method or break the logic into more variables in the method. It is very difficult to understand the Scala magic here. You call the method `extractAggregatesAndExpressions` but what do the expression that come out of this method describe? Also you use too generic `aggs` and `agg` variables name with different data types and meaning.",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element. Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -493,7 +493,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 26,
             "Comment Body": "getOrComputeAggregation?",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -501,7 +501,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 25,
             "Comment Body": "What about renaming to generateAggregation?",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -509,7 +509,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 59,
             "Comment Body": "This line can be dropped. The null term is not evaluated if nullCheck is disabled.",
-            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 233601182,
@@ -517,7 +517,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 8,
             "Comment Body": "Why not moving this to `MatchUtil` and perform the validation in the `DataStreamRelNode` instead?",
-            "Comment Classification": "Moving Functionality: Comments that suggest moving a function, part of a function, a module, or a class to a different part of the code, grouping related code, moving statements"
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 233601182,
@@ -525,7 +525,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 9,
             "Comment Body": "Extract the star variable into a static constant.",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 233601182,
@@ -533,7 +533,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 60,
             "Comment Body": "nit: move all classes to the bottom to logically separate them from methods.",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 233601182,
@@ -541,7 +541,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 20,
             "Comment Body": "Can you add a high level description how aggregates work in this code generator? Maybe here or even for the top-level class. Otherwise we don't remember it when we have to touch this class again. Maybe a little example code that explains which methods, classes, fields are generated and why? Not super detailed but at least to understand the concept. Actually this is also missing in the AggregationCodeGenerator.",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 233601182,
@@ -549,7 +549,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 47,
             "Comment Body": "rename to aggCall",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -557,7 +557,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 51,
             "Comment Body": "What about removing the prefix `single`?",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -565,7 +565,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 48,
             "Comment Body": "`patternName` doesn't reflects what this variable holds. What about rename `patternName` to `eventsExpr` or something else?",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -573,7 +573,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 62,
             "Comment Body": "We could even move this constant definition to `MatchUtil`?",
-            "Comment Classification": "Moving Functionality: Comments that suggest moving a function, part of a function, a module, or a class to a different part of the code, grouping related code, moving statements"
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 233601182,
@@ -581,7 +581,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 50,
             "Comment Body": "Define `calculateAgg_$variableUID` as a variable such as `val calculateAggFuncName = calculateAgg_$variableUID`",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 233601182,
@@ -589,7 +589,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 52,
             "Comment Body": "Remove the whitespace before the colon",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 233601182,
@@ -597,7 +597,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 19,
             "Comment Body": "Use the function utils for open/close. In case aggregator is not rich?",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 233601182,
@@ -605,7 +605,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 53,
             "Comment Body": "rexAggCall renamed to aggCall?",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -613,7 +613,7 @@
             "Comment Author": "dianfu",
             "Comment Order": 49,
             "Comment Body": "Use `inputExprs.zipWithIndex.map { case (inputExpr, index)` instead? It will make the code more readable.",
-            "Comment Classification": "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 233601182,
@@ -621,7 +621,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 4,
             "Comment Body": "Remove the default here and at other places. Implementers should explicitly state what they want.",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 233601182,
@@ -629,7 +629,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 5,
             "Comment Body": "Add more documentation to this function? What is `index` good for?",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 233601182,
@@ -637,7 +637,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 6,
             "Comment Body": "Introduce a case class here as well.",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 233601182,
@@ -645,7 +645,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 63,
             "Comment Body": "Actually I thought that this function can be part of `AggregateMetadata`? Because you always apply it on the calls count.",
-            "Comment Classification": "Moving Functionality: Comments that suggest moving a function, part of a function, a module, or a class to a different part of the code, grouping related code, moving statements"
+            "Comment Classification": "Moving Functionality"
       },
       {
             "PR ID": 233601182,
@@ -653,7 +653,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 2,
             "Comment Body": "We definitely need more documentation for this function. Can you create case classes for the return type of this function for proper naming because `Array[Int]` or `Array[Boolean]` is not very helpful.",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 233601182,
@@ -661,7 +661,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 56,
             "Comment Body": "This occurs quite often (I counted 10 times). Maybe create helper function in `AggregateMetadata` that takes the grouping length such as `getAdjustedMapping()`?",
-            "Comment Classification": "Duplication: Comments that suggest removing duplication or semantic duplication"
+            "Comment Classification": "Duplication"
       },
       {
             "PR ID": 233601182,
@@ -669,7 +669,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 3,
             "Comment Body": "Restore this and the following line?",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 233601182,
@@ -677,7 +677,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 1,
             "Comment Body": "Can you add a comment to every method in this class? This class is quite big every comment helps in understanding what is going on. For example, `Converts Calcite's [[SqlAggFunction]] to a Flink UDF [[TableAggregationFunction]]`.",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 233601182,
@@ -685,7 +685,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 7,
             "Comment Body": "nit: We are already in the `MatchRecognizeITCase` so we don't need to prefix every method with CEP.",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -693,7 +693,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 13,
             "Comment Body": "remove this when we don't support it",
-            "Comment Classification": "Depreciated Functions: Comments that indicate the use of old or depreciated functions."
+            "Comment Classification": "Depreciated Functions"
       },
       {
             "PR ID": 233601182,
@@ -701,7 +701,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 14,
             "Comment Body": "Produce a second row to be on the safe side?",
-            "Comment Classification": "Feature Completeness: Comments that suggest that a feature is not entirely implemented, does not meet stakeholder requirements"
+            "Comment Classification": "Feature Completeness"
       },
       {
             "PR ID": 233601182,
@@ -709,7 +709,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 16,
             "Comment Body": "nit: hint you can also use `Int.box()`",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 233601182,
@@ -717,7 +717,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 15,
             "Comment Body": "nit: use the `Types` class",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 35890845,
@@ -725,7 +725,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 3,
             "Comment Body": "1. Please avoid blanket catch (Exception e) statements\n2. Please log the exception.\n",
-            "Comment Classification": "Unhandled Errors/Exceptions: Comments that indicate unhandled errors or exceptions, Logging: Comments that indicate that logging is needed"
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 35890845,
@@ -733,7 +733,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 6,
             "Comment Body": "What is the return result if there are no data files.\n",
-            "Comment Classification": "Understanding: Comments that ask questions about the code to further their understanding."
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 35890845,
@@ -741,7 +741,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 4,
             "Comment Body": "Is it possible that the list is empty? Please be defensive.\n",
-            "Comment Classification": "Unvalidated Element: Comments that indicate that a variable or function return value isn’t checked before usage"
+            "Comment Classification": "Unvalidated Element"
       },
       {
             "PR ID": 35890845,
@@ -749,7 +749,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 5,
             "Comment Body": "please add the parent exception so we can preserve the stack trace: throw new IOException(\"Cannot get the schema for directory \" + directory, e);\n",
-            "Comment Classification": "Unhandled Errors/Exceptions: Comments that indicate unhandled errors or exceptions"
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 35890845,
@@ -757,7 +757,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 12,
             "Comment Body": "Please do:\n\n```\ncatch (IOException ioe) {\n  ...\n} catch (Throwable t) {\n  throw closer.rethrow(t);\n} finally {\n  closer.close();\n}\n```\n",
-            "Comment Classification": "Unhandled Errors/Exceptions: Comments that indicate unhandled errors or exceptions"
+            "Comment Classification": "Unhandled Errors/Exceptions"
       },
       {
             "PR ID": 35890845,
@@ -765,7 +765,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 14,
             "Comment Body": "Please use `Lists.newArrayList`.\n",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 35890845,
@@ -773,7 +773,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 13,
             "Comment Body": "You can use `Longs.compare`.\n",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 35890845,
@@ -781,7 +781,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 15,
             "Comment Body": "`listStatus` could potentially return null, so better to be defensive here.\n",
-            "Comment Classification": "Unvalidated Element: Comments that indicate that a variable or function return value isn’t checked before usage"
+            "Comment Classification": "Unvalidated Element"
       },
       {
             "PR ID": 35890845,
@@ -789,7 +789,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 8,
             "Comment Body": "Please make sure that the schema is a record schema.\n",
-            "Comment Classification": "Element Type: Comments that indicate that a code element is of the wrong type"
+            "Comment Classification": "Element Type"
       },
       {
             "PR ID": 35890845,
@@ -797,7 +797,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 7,
             "Comment Body": "Shouldn't this be after line 244? It has to cleared for every field.\n",
-            "Comment Classification": "Wrong Location: Comments that indicate that an operation has been executed at the wrong place in the code, i.e., should have been performed earlier or later"
+            "Comment Classification": "Wrong Location"
       },
       {
             "PR ID": 35890845,
@@ -805,7 +805,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 16,
             "Comment Body": "ditto. Please use `Lists.newArrayList`.\n",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 35890845,
@@ -813,7 +813,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 9,
             "Comment Body": "This does not seems to be used.\n",
-            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 35890845,
@@ -821,7 +821,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 17,
             "Comment Body": "Ditto.\n",
-            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 36767246,
@@ -829,7 +829,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 1,
             "Comment Body": "As far as I can tell none of these are needed. Can we remove them for now?\n",
-            "Comment Classification": "Removing Dead Code: Comments that suggest removing dead code, or semantic dead code i.e., unused code"
+            "Comment Classification": "Removing Dead Code"
       },
       {
             "PR ID": 36767246,
@@ -837,7 +837,7 @@
             "Comment Author": "suvodeep-pyne",
             "Comment Order": 15,
             "Comment Body": "Nitpick: can remove empty closures\n",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 36767246,
@@ -845,7 +845,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 17,
             "Comment Body": "You can change this to return type `boolean` instead of `Boolean`\n",
-            "Comment Classification": "Element Type: Comments that indicate that a code element is of the wrong type"
+            "Comment Classification": "Element Type"
       },
       {
             "PR ID": 36767246,
@@ -853,7 +853,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 12,
             "Comment Body": "I think we can lose the generic types \"I\" and \"O\". `isValid` doesn't need to take in parameters. Any required information for a `ValidationRule` can just be passed in via the constructor.\n",
-            "Comment Classification": "Function Parameters: Comments that indicate missing or incorrect function parameters, like incorrect use of void parameters."
+            "Comment Classification": "Function Parameters"
       },
       {
             "PR ID": 36767246,
@@ -861,7 +861,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 18,
             "Comment Body": "Same as above\n",
-            "Comment Classification": "Function Parameters: Comments that indicate missing or incorrect function parameters, like incorrect use of void parameters."
+            "Comment Classification": "Function Parameters"
       },
       {
             "PR ID": 36767246,
@@ -869,7 +869,7 @@
             "Comment Author": "sahilTakiar",
             "Comment Order": 5,
             "Comment Body": "Can you document in more detail how this interface exactly gets used. I don't fully understand the flow from the `ConfigReader` to the `ConfigStepsGenerator` to a `Step`.\n",
-            "Comment Classification": "Documentation: Comments that suggest issues in documentation, such as incorrect information, wording and grammar issues, or incorrect licensing details"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 36767246,
@@ -877,7 +877,7 @@
             "Comment Author": "suvodeep-pyne",
             "Comment Order": 14,
             "Comment Body": "Copyright is generally the first thing in the file. \n",
-            "Comment Classification": "Code Style & Formatting: Comments that indicate Inconsistent Indentation, incorrect use of spacing, blank lines, unneeded long lines, bracket usage, improving readability, maintaining consistency or anything else related to the style and formatting of the code"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 36767246,
@@ -885,7 +885,7 @@
             "Comment Author": "suvodeep-pyne",
             "Comment Order": 16,
             "Comment Body": "One suggestion is to actually nail down the config file instead of generifying it. The user can store in whatever format he wants and its his responsibility to feed in the information as a config which can be a simple properties object or even a hadoop config. This config can be used to execute the test harness. If the Config is an unqualified generic then, how do we plan to read the config in the framework ?\n",
-            "Comment Classification": "Function Parameters, Knowledge Transfer, and possibly Code Complexity"
+            "Comment Classification": "Function Parameters"
       },
       {
             "PR ID": 36767246,
@@ -917,7 +917,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 22,
             "Comment Body": "nit: Shouldn't this be outside the loop?\n",
-            "Comment Classification": "Logic Error, Wrong Location "
+            "Comment Classification": "Logic Error"
       },
       {
             "PR ID": 37074507,
@@ -933,7 +933,7 @@
             "Comment Author": "liyinan926",
             "Comment Order": 7,
             "Comment Body": "Is it possible for `getBytes` to return a `null`? BTW: need one space before `=`.\n",
-            "Comment Classification": "Code Style & Formatting, Unvalidated Element"
+            "Comment Classification": "Code Style & Formatting"
       },
       {
             "PR ID": 37074507,
@@ -1269,7 +1269,7 @@
             "Comment Author": "lanking520",
             "Comment Order": 40,
             "Comment Body": "```suggestion\r\n3. Please add documentation and tests to explain/cover your changes.\r\n```",
-            "Comment Classification": "Documentation, Test Coverage"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 246539821,
@@ -1389,7 +1389,7 @@
             "Comment Author": "jlahoda",
             "Comment Order": 1,
             "Comment Body": "Please no access to javac internal types (com.sun.tools.**) in hint implementations. Maybe initTypeMirror = org.netbeans.modules.java.hints.errors.Utilities.resolveCapturedType(initTypeMirror) + just he isSameType check would work? (Possibly check that initTypeMirror is not an erroneous type before, not sure.)",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 185369888,
@@ -1397,7 +1397,7 @@
             "Comment Author": "sdedic",
             "Comment Order": 5,
             "Comment Body": "can be this part of condition part of the `anyMatch` clause ?",
-            "Comment Classification": "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 185369888,
