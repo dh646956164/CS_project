@@ -317,7 +317,7 @@
             "Comment Author": "twalthr",
             "Comment Order": 31,
             "Comment Body": "Just call it `Aggregations`?",
-            "Comment Classification": "Naming Conventions: Comments that suggest changing the name of a variable, method etc. Or indicate some other problem with the naming of a code element"
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 233601182,
@@ -917,7 +917,7 @@
             "Comment Author": "chavdar",
             "Comment Order": 22,
             "Comment Body": "nit: Shouldn't this be outside the loop?\n",
-            "Comment Classification": "Logic Error, Wrong Location "
+            "Comment Classification": "Logic Error, Wrong Location"
       },
       {
             "PR ID": 37074507,
@@ -1389,7 +1389,7 @@
             "Comment Author": "jlahoda",
             "Comment Order": 1,
             "Comment Body": "Please no access to javac internal types (com.sun.tools.**) in hint implementations. Maybe initTypeMirror = org.netbeans.modules.java.hints.errors.Utilities.resolveCapturedType(initTypeMirror) + just he isSameType check would work? (Possibly check that initTypeMirror is not an erroneous type before, not sure.)",
-            "Comment Classification": "Using standard methods: Comments that suggest using standard methods or pre-existing solutions"
+            "Comment Classification": "Using standard methods"
       },
       {
             "PR ID": 185369888,
@@ -1397,7 +1397,7 @@
             "Comment Author": "sdedic",
             "Comment Order": 5,
             "Comment Body": "can be this part of condition part of the `anyMatch` clause ?",
-            "Comment Classification": "Code Complexity: Comments that indicate code is excessively complex. Suggesting things like simplifying logic, reducing sub-routine length"
+            "Comment Classification": "Code Complexity"
       },
       {
             "PR ID": 185369888,
@@ -3341,7 +3341,7 @@
             "Comment Author": "rnveach",
             "Comment Order": 30,
             "Comment Body": "Look at top text, it says are \"not compatible ... till ....\". This check will never be compatible. It always logs by line number since there is never any AST.\r\n\r\nWe need to follow pattern of other checks where we couldn't support them, `Regexp` and `RegexpSinglelineJava` and give a reason. xdoc should also be updated too.",
-            "Comment Classification": "Testing"
+            "Comment Classification": "Documentation"
       },
       {
             "PR ID": 406948586,
@@ -3381,7 +3381,7 @@
             "Comment Author": "agavra",
             "Comment Order": 2,
             "Comment Body": "should we test successful casts that aren't no-op here?",
-            "Comment Classification": "Testing"
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 257705961,
@@ -4781,7 +4781,7 @@
             "Comment Author": "tobiasdiez",
             "Comment Order": 17,
             "Comment Body": "Ah ok. Then I would suggest a rename of the variable.\n",
-            "Comment Classification": "Naming Conventions "
+            "Comment Classification": "Naming Conventions"
       },
       {
             "PR ID": 63851500,
@@ -6165,7 +6165,7 @@
             "Comment Author": "cgtz",
             "Comment Order": 8,
             "Comment Body": "Is `cuQuota` written/read from multiple threads? You may need a ConcurrentHashMap to prevent things like ConcurrentModificationException during iterating and, if there are multiple writers, corrupted internal state.",
-            "Comment Classification": "Concurrency Issues"
+            "Comment Classification": "Understanding"
       },
       {
             "PR ID": 420687889,
